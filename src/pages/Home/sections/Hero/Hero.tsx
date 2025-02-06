@@ -10,7 +10,15 @@ const Hero = () => {
     backgroundColor: theme.palette.primary.main,
     height: "100vh",
     alignItems: "center",
-    display: "flex"
+    display: "flex",
+    [theme.breakpoints.up('xs')]: { // altera para mobile <=mobile
+      paddingTop: "100px",
+
+    },
+    [theme.breakpoints.up('md')]: { // altera para desktop >=mobile
+      paddingTop: "0",
+    }
+
   }))
   const StyleImg = styled("img")(({theme}) => ({
      width: "80%",
@@ -29,17 +37,17 @@ const Hero = () => {
                     <Box position= "absolute" width={"150%"} top={-100} right={0}>
                       <AnimatedBackground></AnimatedBackground>
                     </Box>
-                    <Box position={"absolute"} textAlign={"center"}>
+                    <Box position={"relative"} textAlign={"center"}>
                       <StyleImg src={Avatar}></StyleImg>  
                     </Box>
                 </Box>
               </Grid2>
               <Grid2 size={{ xs: 12, md: 7}}>
-                <Typography color="primary.contrastText" variant="h1" textAlign="center">Lucas Freitas</Typography>
-                <Typography color="secondary" variant="h2" textAlign={"center"}>I'm a Software Dev and Data Scientist</Typography>
+                <Typography color="primary.contrastText" variant="h1" textAlign="center" pb={2}>Lucas Freitas</Typography>
+                <Typography color="secondary" variant="h2" textAlign={"center"} pb={2}>I'm a Software Dev and Data Scientist</Typography>
                 <Grid2 container display={"flex"} justifyContent={"center"} spacing={3}>
                     <Grid2 size={{xs: 12, md:4}} display={"flex"} justifyContent={"center"}>
-                        <StyleButton>
+                        <StyleButton onClick={() => console.log("download")}>
                           <CloudDownloadIcon></CloudDownloadIcon> 
                           <Typography>
                             Download CV 
@@ -47,7 +55,7 @@ const Hero = () => {
                         </StyleButton>
                     </Grid2>
                     <Grid2 size={{xs: 12, md:4}} display={"flex"} justifyContent={"center"}>
-                        <StyleButton>
+                        <StyleButton onClick={() => console.log("contato")}>
                           <ContactPageIcon></ContactPageIcon>
                           <Typography>
                             Contact me
