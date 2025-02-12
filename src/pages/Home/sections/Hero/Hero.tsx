@@ -4,6 +4,7 @@ import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import ContactPageIcon from '@mui/icons-material/ContactPage';
 import StyleButton from "../../../../components/StyleButton/StyleButton";
 import { AnimatedBackground } from "../../../../components/StyleButton/AnimatedBackgroud/AnimatedBackgroud";
+import theme from "../../../../Theme";
 const Hero = () => {
 
   const StyleHero = styled("div")(({theme}) => ( {
@@ -27,6 +28,15 @@ const Hero = () => {
 
   }))
 
+  const StyleText = styled('div')(() => ({
+    textShadow: 
+      '2px 2px 0 #000, ' +
+      '-2px -2px 0 #000, ' +
+      '2px -2px 0 #000, ' +
+      '-2px 2px 0 #000', 
+  }));
+  
+
     return (
       <>
         <StyleHero>
@@ -43,8 +53,10 @@ const Hero = () => {
                 </Box>
               </Grid2>
               <Grid2 size={{ xs: 12, md: 7}}>
-                <Typography color="primary.contrastText" variant="h1" textAlign="center" pb={2}>Lucas Freitas</Typography>
-                <Typography color="secondary" variant="h2" textAlign={"center"} pb={2}>I'm a Software Dev and Data Scientist</Typography>
+                <StyleText> 
+                  <Typography color="primary.contrastText" variant="h1" textAlign="center" pb={2}>Lucas Freitas</Typography>
+                  <Typography color="secondary" variant="h2" textAlign={"center"} pb={2} >I'm a Software Dev and Data Scientist</Typography>
+                </StyleText>
                 <Grid2 container display={"flex"} justifyContent={"center"} spacing={3}>
                     <Grid2 size={{xs: 12, md:4}} display={"flex"} justifyContent={"center"}>
                         <StyleButton onClick={() => console.log("download")}>
