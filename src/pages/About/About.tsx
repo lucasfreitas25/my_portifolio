@@ -1,14 +1,8 @@
-import { Box, Container, Divider, Grid, Grid2, List, ListItem, ListItemText, styled, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Container, Divider, Grid2, List, ListItem, Tab, Tabs, Typography, styled } from "@mui/material";
 import React from "react";
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
-}
-
 const logo_back = [
-  'logo C.png',
+  'logo_C.png',
   'logo Java.png',
   'logo node.png',
   'logo python.png'
@@ -24,19 +18,13 @@ const logo_bd = [
   'logo sqllite.png'
 ];
 
-function TabPanel(props: TabPanelProps) {
+function TabPanel(props: { children?: React.ReactNode; index: number; value: number }) {
   const { children, value, index, ...other } = props;
 
   return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`vertical-tabpanel-${index}`}
-      aria-labelledby={`vertical-tab-${index}`}
-      {...other}
-    >
+    <div role="tabpanel" hidden={value !== index} {...other}>
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ p: 2 }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -62,10 +50,13 @@ export default function Skills() {
   const StyleHero = styled("div")(({ theme }) => ({
     backgroundColor: "white",
     height: "100vh",
-    alignItems: "center",
     display: "flex",
+    alignItems: "center",
+    justifyContent: "center", 
+    flexDirection: "column",  
     [theme.breakpoints.up('xs')]: {
       paddingTop: "100px", // Ajuste para mobile
+      width: "100%"
     },
     [theme.breakpoints.up('md')]: {
       paddingTop: "0", // Ajuste para desktop
@@ -73,92 +64,118 @@ export default function Skills() {
   }));
 
   const StyleImg = styled("img")({
-    width: "20%",
-    borderRadius: "50%",
-    border: `1px solid #333`,
-
+    width: "100%",  
+    height: "100px",  
+    objectFit: "contain", 
   });
 
   const LogoGallery = ({ logos }: { logos: string[] }) => {
     return (
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: '5px' }}>
+      <Box sx={{ display: 'flex', flexDirection: 'row', gap: '20px', flexWrap: 'wrap', justifyContent: 'center' }}>
         {logos.map((logo, index) => (
-          <StyleImg key={index} src={`/images/${logo}`} alt={`Logo ${index + 1}`} />
+          <Box key={index} sx={{ width: "20%" }}> 
+            <StyleImg src={`src/assets/images/${logo}`} alt={`Logo ${index + 1}`} />
+          </Box>
         ))}
       </Box>
     );
   };
+  
 
-  const StyleBox = styled("box")({
-
+  const StyleBox = styled("div")({
+    display: 'flex',
+    flexDirection: 'column', 
+    height: 'auto',
+    width: '100%',
+    padding: 0,
+    gap: '16px', 
   });
 
   const StyleLIST = {
-    width: '100%',
-    maxWidth: 360,
+    flex: 1,
+    // maxWidth: 500,
     border: '2px solid',
     borderColor: 'divider',
     backgroundColor: 'background.paper',
-    padding: 0,
+    display: 'flex', 
+    flexDirection: 'column',
+    width: "100%",
   };
 
   const StyleTabPanel = styled(Box)({
-    padding: 0,
+    padding: '16px', // Adicionado padding para garantir o espaçamento adequado
+    backgroundColor: '#f5f5f5',  // Altere a cor de fundo se desejar
+    borderRadius: '8px',  // Bordas arredondadas para um visual mais suave
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',  // Sombra para destacar o conteúdo
+    height: '100%',  // Ajustado para que ocupe toda a altura disponível
+    overflowY: 'auto',  // Para que o conteúdo não ultrapasse e tenha scroll se necessário
+    alignItems: 'center',
+    display: 'flex'
+    
   });
 
   return (
-    <>
-      <StyleHero>
-        <Container maxWidth="lg">
-          <Grid2 container spacing={2} sx={{ position: 'relative' }}>
-            <Box sx={{    
-              flexGrow: 1,
-              bgcolor: 'background.paper',
-              display: 'flex',
-              height: 224,
-              padding: 0,
-              border: `1px solid blue`,}}>
-              <StyleBox>
-                <Tabs
-                  orientation="vertical"
-                  variant="scrollable"
-                  value={value}
-                  onChange={handleChange}
-                  aria-label="Vertical tabs example"
-                  sx={{ borderRight: 1, borderColor: 'divider' }}
-                >
-                  <Tab label="SKILLS" {...a11yProps(0)} />
-                  <Tab label="COURSES" {...a11yProps(1)} />
-                </Tabs>
-                <TabPanel value={value} index={0}>
-                  <StyleTabPanel>
-                    <List sx={StyleLIST}>
-                      <ListItem>
-                        <ListItemText primary="BACKEND" />
-                        <LogoGallery logos={logo_back} />
-                      </ListItem>
-                      <Divider component="li" />
-                      <ListItem>
-                        <ListItemText primary="FRONTEND" />
-                        <LogoGallery logos={logo_front} />
-                      </ListItem>
-                      <Divider component="li" />
-                      <ListItem>
-                        <ListItemText primary="DATABASES" />
-                        <LogoGallery logos={logo_bd} />
-                      </ListItem>
-                      <Divider component="li" />
-                    </List>
-                  </StyleTabPanel>
-                </TabPanel>
-                <TabPanel value={value} index={1}>
-                  Nome do curso, ano de conclusão e botão de download do portfólio
-                </TabPanel>
-              </StyleBox>
-            </Box>
-          </Grid2>
-        </Container>
-      </StyleHero>
-    </>
+    <StyleHero>
+      <Container maxWidth="lg">
+        <Grid2 container spacing={2} sx={{ position: 'relative' }}>
+          <Box sx={{
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column', 
+            height: 'auto',
+            padding: 0,
+            // border: '1px solid blue',
+          }}>
+            <StyleBox>
+              <Tabs
+                orientation="horizontal" 
+                variant="scrollable"
+                value={value}
+                onChange={handleChange}
+                aria-label="Vertical tabs example"
+                centered
+                sx={{
+                  borderColor: 'divider',
+                  display: 'flex', 
+                  flexDirection:'column',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                }}
+              >
+                <Tab label="SKILLS" {...a11yProps(0)} sx={{ fontSize: '20px', fontWeight: 'bold',  }} /> 
+                <Tab label="COURSES" {...a11yProps(1)} sx={{ fontSize: '20px', fontWeight: 'bold',  }} /> 
+              </Tabs>
+
+              {/* Conteúdo das Abas */}
+              <TabPanel value={value} index={0}>
+                <StyleTabPanel>
+                  <List sx={StyleLIST}>
+                    <ListItem>
+                      <Typography sx={{fontWeight: 'bold'}}>BACKEND:</Typography>
+                      <LogoGallery logos={logo_back} />
+                    </ListItem>
+                    <Divider component="li" />
+                    <ListItem>
+                      <Typography sx={{fontWeight: 'bold'}}>FRONTEND:</Typography>
+                      <LogoGallery logos={logo_front} />
+                    </ListItem>
+                    <Divider component="li" />
+                    <ListItem>
+                      <Typography sx={{fontWeight: 'bold'}}>BDs:</Typography>
+                      <LogoGallery logos={logo_bd} />
+                    </ListItem>
+                    <Divider component="li" />
+                  </List>
+                </StyleTabPanel>
+              </TabPanel>
+
+              <TabPanel value={value} index={1}>
+                Nome do curso, ano de conclusão e botão de download do portfólio
+              </TabPanel>
+            </StyleBox>
+          </Box>
+        </Grid2>
+      </Container>
+    </StyleHero>
   );
 }

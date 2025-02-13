@@ -4,7 +4,7 @@ import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import ContactPageIcon from '@mui/icons-material/ContactPage';
 import StyleButton from "../../../../components/StyleButton/StyleButton";
 import { AnimatedBackground } from "../../../../components/StyleButton/AnimatedBackgroud/AnimatedBackgroud";
-import theme from "../../../../Theme";
+
 const Hero = () => {
 
   const StyleHero = styled("div")(({theme}) => ( {
