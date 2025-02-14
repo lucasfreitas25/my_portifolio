@@ -59,10 +59,10 @@ const Hero = () => {
                 </StyleText>
                 <Grid2 container display={"flex"} justifyContent={"center"} spacing={3}>
                     <Grid2 size={{xs: 12, md:4}} display={"flex"} justifyContent={"center"}>
-                        <StyleButton onClick={() => console.log("download")}>
+                        <StyleButton onClick={() => console.log("download") }>
                           <CloudDownloadIcon></CloudDownloadIcon> 
                           <Typography>
-                            Download CV 
+                            Download Resume 
                           </Typography>
                         </StyleButton>
                     </Grid2>
