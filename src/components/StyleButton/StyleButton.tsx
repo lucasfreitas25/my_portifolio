@@ -26,14 +26,17 @@ const StyleButton: React.FC<StyleButtonProps> = ({
       borderRadius: "4px",
       padding: padding,
       width: width,
-      color: textColor || theme.palette.primary.contrastText, // Usa o textColor passado ou o default do theme
+      color: textColor || theme.palette.primary.contrastText, 
       display: "inline-flex",
       alignItems: "center",
       justifyContent: "center",
       gap: "10px",
       '&:hover': {
         backgroundColor: theme.palette.secondary.dark
-      }
+      },
+      '& .MuiTypography-root': {
+            display: { xs: 'none', sm: 'block' }, // Esconde o texto em telas pequenas (xs)
+          }
     }));
   
     return (

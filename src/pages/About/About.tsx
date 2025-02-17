@@ -2,6 +2,8 @@ import { Box, Container, Divider, Grid2, List, ListItem, Tab, Tabs, Typography, 
 import React from "react";
 import StyleButton from "../../components/StyleButton/StyleButton";
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 
 const logo_back = [
   'logo_C.png',
@@ -67,17 +69,27 @@ export default function Skills() {
     },
   }));
 
-  const StyleImg = styled("img")({
-    width: "100%",  
-    height: "100px",  
+  const StyleImg = styled("img")(({ theme }) => ({
+    
+     
     objectFit: "contain", 
-  });
+    [theme.breakpoints.down("sm")]: { 
+      width: "40px", 
+      height: "40px" 
+    
+    },
+    [theme.breakpoints.up("sm")]: { 
+      width: "100%",  
+      height: "100px", 
+    },
+     
+  }));
 
   const LogoGallery = ({ logos }: { logos: string[] }) => {
     return (
-      <Box sx={{ display: 'flex', flexDirection: 'row', gap: '15px', flexWrap: 'wrap', justifyContent: 'center' }}>
+      <Box sx={{ display: 'flex', flexDirection: 'row', gap: {xs: '25px', sm: '15px'}, flexWrap: 'wrap', justifyContent: 'center' }}>
         {logos.map((logo, index) => (
-          <Box key={index} sx={{ width: "18%" }}> 
+          <Box key={index} sx={{ marginLeft: '20px' }}> 
             <StyleImg src={`src/assets/images/${logo}`} alt={`Logo ${index + 1}`} />
           </Box>
         ))}
@@ -92,7 +104,6 @@ export default function Skills() {
     height: 'auto',
     width: '100%',
     padding: 0,
-    gap: '15px', 
   });
 
   const StyleLIST = {
@@ -104,6 +115,7 @@ export default function Skills() {
     flexDirection: 'column',
     width: "100%",
     gap: '5px',
+    // transition: `all 5s ease`,
   };
 
   const StyleTabPanel = styled(Box)({
@@ -111,10 +123,12 @@ export default function Skills() {
     backgroundColor: '#f5f5f5', 
     borderRadius: '8px',  
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',  
-    height: '100%', 
+    height: 'auto',
     overflowY: 'auto',  
     alignItems: 'center',
     display: 'flex',
+    opacity: 1, 
+    transition: "opacity 0.3s ease-in-out" 
   });
 
   return (
@@ -130,25 +144,28 @@ export default function Skills() {
             
           }}>
             <StyleBox>
-              <Tabs
-                orientation="horizontal" 
-                variant="scrollable"
-                value={value}
-                onChange={handleChange}
-                aria-label="Vertical tabs example"
-                centered
-                sx={{
-                  borderColor: 'divider',
-                  display: 'flex', 
-                  flexDirection:'column',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  
-                }}
-              >
-                <Tab label="SKILLS" {...a11yProps(0)} sx={{ fontSize: '20px', fontWeight: 'bold',  }} /> 
-                <Tab label="COURSES" {...a11yProps(1)} sx={{ fontSize: '20px', fontWeight: 'bold',  }} /> 
-              </Tabs>
+                <Tabs
+                  orientation="horizontal" 
+                  variant="scrollable"
+                  value={value}
+                  onChange={handleChange}
+                  aria-label="Vertical tabs example"
+                  scrollButtons
+                  allowScrollButtonsMobile
+                  centered
+                  sx={{
+                    borderColor: 'divider',
+                    display: 'flex', 
+                    flexDirection:'column',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    
+                  }}
+                >
+                    <Tab icon={<ManageAccountsIcon></ManageAccountsIcon>}label="SKILLS" {...a11yProps(0)} sx={{ fontSize: '20px', fontWeight: 'bold',  }} /> 
+                    <Tab icon={<LibraryBooksIcon></LibraryBooksIcon>} label="COURSES" {...a11yProps(1)} sx={{ fontSize: '20px', fontWeight: 'bold',  }} /> 
+
+                </Tabs>
 
               
               <TabPanel value={value} index={0}>
@@ -165,7 +182,7 @@ export default function Skills() {
                     </ListItem>
                     <Divider component="li" />
                     <ListItem>
-                      <Typography sx={{fontWeight: 'bold'}}>BDs:</Typography>
+                      <Typography sx={{fontWeight: 'bold'}}>BANCO DE DADOS:</Typography>
                       <LogoGallery logos={logo_bd} />
                     </ListItem>
                 
@@ -184,7 +201,7 @@ export default function Skills() {
                       </Box>
                       <StyleButton onClick={() => console.log("download")} width="13%" backgroundColor="green">
                         <WorkspacePremiumIcon />
-                        <Typography>Certificado</Typography>
+                        <Typography sx={{display: { xs: 'none', sm: 'block' } }}>Certificado</Typography>
                       </StyleButton>
                     </ListItem>
                     <Divider component="li" />
@@ -197,7 +214,7 @@ export default function Skills() {
                       </Box>
                       <StyleButton onClick={() => console.log("download")} width="13%" backgroundColor="green">
                         <WorkspacePremiumIcon />
-                        <Typography>Certificado</Typography>
+                        <Typography sx={{display: { xs: 'none', sm: 'block' } }}>Certificado</Typography>
                       </StyleButton>
                     </ListItem>
                     <Divider component="li" />
@@ -210,7 +227,7 @@ export default function Skills() {
                       </Box>
                       <StyleButton onClick={() => console.log("download")} width="13%" backgroundColor="green">
                         <WorkspacePremiumIcon />
-                        <Typography>Certificado</Typography>
+                        <Typography sx={{display: { xs: 'none', sm: 'block' } }}>Certificado</Typography>
                       </StyleButton>
                     </ListItem>
                     <Divider component="li" />
@@ -223,7 +240,7 @@ export default function Skills() {
                       </Box>
                       <StyleButton onClick={() => console.log("download")} width="13%" backgroundColor="green">
                         <WorkspacePremiumIcon />
-                        <Typography>Certificado</Typography>
+                        <Typography sx={{display: { xs: 'none', sm: 'block' } }}>Certificado</Typography>
                       </StyleButton>
                     </ListItem>
                     <Divider component="li" />
@@ -234,9 +251,9 @@ export default function Skills() {
                         <Typography sx={{ fontWeight: 'bold' }}>CURSO:</Typography>
                         <Typography sx={{ fontWeight: 'bold' }}>Santander 2024 - Fundamentos de IA para Devs, 2024</Typography>
                       </Box>
-                      <StyleButton onClick={() => console.log("download")} width="13%" backgroundColor="green">
+                      <StyleButton onClick={() => console.log("download")} width="13%" backgroundColor="green" >
                         <WorkspacePremiumIcon />
-                        <Typography>Certificado</Typography>
+                        <Typography sx={{display: { xs: 'none', sm: 'block' } }}>Certificado</Typography>
                       </StyleButton>
                     </ListItem>
                   </List>
