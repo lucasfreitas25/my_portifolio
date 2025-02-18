@@ -1,6 +1,6 @@
 import About from "./pages/About/About"
 import Home from "./pages/Home/Home"
-
+import Projects from "./pages/Projects/Projects"
 const App = () => {
 
 
@@ -8,6 +8,7 @@ const App = () => {
     <>
       <Home></Home>
       <About></About>
+      <Projects></Projects>
     </>
   )
 }

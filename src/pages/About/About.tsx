@@ -76,6 +76,7 @@ export default function Skills() {
     [theme.breakpoints.down("sm")]: { 
       width: "40px", 
       height: "40px" 
+
     
     },
     [theme.breakpoints.up("sm")]: { 
@@ -87,9 +88,9 @@ export default function Skills() {
 
   const LogoGallery = ({ logos }: { logos: string[] }) => {
     return (
-      <Box sx={{ display: 'flex', flexDirection: 'row', gap: {xs: '25px', sm: '15px'}, flexWrap: 'wrap', justifyContent: 'center' }}>
+      <Box sx={{ display: 'flex', flexDirection: 'row', gap: {xs: '25px', sm: '15px'}, flexWrap: 'wrap', justifyContent: 'center', marginLeft:"25px" }}>
         {logos.map((logo, index) => (
-          <Box key={index} sx={{ marginLeft: '20px' }}> 
+          <Box key={index} sx={{gap:"5px"}}> 
             <StyleImg src={`src/assets/images/${logo}`} alt={`Logo ${index + 1}`} />
           </Box>
         ))}
@@ -111,11 +112,12 @@ export default function Skills() {
     border: '2px solid',
     borderColor: 'divider',
     backgroundColor: 'background.paper',
-    display: 'flex', 
+    display: {xs: "flex", sm:"inline-flex"},
     flexDirection: 'column',
     width: "100%",
     gap: '5px',
-    // transition: `all 5s ease`,
+    justifyContent: "center", 
+    flexWrap: "wrap",
   };
 
   const StyleTabPanel = styled(Box)({
@@ -128,7 +130,6 @@ export default function Skills() {
     alignItems: 'center',
     display: 'flex',
     opacity: 1, 
-    transition: "opacity 0.3s ease-in-out" 
   });
 
   return (
@@ -249,7 +250,7 @@ export default function Skills() {
                     <ListItem sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <Box>
                         <Typography sx={{ fontWeight: 'bold' }}>CURSO:</Typography>
-                        <Typography sx={{ fontWeight: 'bold' }}>Santander 2024 - Fundamentos de IA para Devs, 2024</Typography>
+                        <Typography sx={{ fontWeight: 'bold', fontSize:{xs:"15px"}}}>Santander 2024 - Fundamentos de IA para Devs, 2024</Typography>
                       </Box>
                       <StyleButton onClick={() => console.log("download")} width="13%" backgroundColor="green" >
                         <WorkspacePremiumIcon />
