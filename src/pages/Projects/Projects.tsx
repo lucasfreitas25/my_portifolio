@@ -8,13 +8,13 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 const itemDev = [
   {
     img: 'src\\assets\\images\\imagem portfolio.png',
-    title: 'Meu portfolio',
+    title: 'Portfólio',
     author: ['logo js.svg', 'logo react.png'],
   },
   {
     img: 'src\\assets\\images\\crud .png',
     title: 'CRUD',
-    author: ['logo java.png'],
+    author: ['logo Java.png', 'logo postgres.png'],
     rows: 2,
     cols: 2,
     featured: true,
@@ -22,7 +22,7 @@ const itemDev = [
   {
     img: 'src\\assets\\images\\Sistema inteligente.png',
     title: 'SISTEMA INTELIGENTE FREITULITOS',
-    author: ['logo python.png'],
+    author: ['logo python.png', 'logo postgres.png'],
   },
   {
     img: 'src\\assets\\images\\linktree freitulitos.png',
@@ -33,23 +33,23 @@ const itemDev = [
   {
     img: 'src\\assets\\images\\site trojan.png',
     title: 'SITE TROJAN',
-    author: ['logo ts.svg'],
+    author: ['logo js.svg', "logo CSS.png", "logo HTML.png"],
   },
   {
     img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
     title: 'Contador de TAGS',
-    author: ['logo js.svg'],
+    author: ['logo node.png', 'logo postgres.png'],
   },
   {
     img: 'src\\assets\\images\\APP freitulitos.jpg',
     title: 'FreitulitosAPP',
-    author: ['logo ts.svg'],
+    author: ['logo js.svg', "logo CSS.png", "logo HTML.png"],
     cols: 2,
   },
   {
     img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
     title: 'FirstAPI',
-    author: ['logo react.png'],
+    author: ['logo python.png'],
     rows: 2,
     cols: 2,
     featured: true,
@@ -60,7 +60,7 @@ const itemData = [
   {
     img: 'src\\assets\\images\\painel pnad.png',
     title: 'PNAD',
-    author: ['logo js.svg'],
+    author: ['logo python.png', 'logo postgres.png'],
     rows: 2,
     cols: 2,
     featured: true,
@@ -68,24 +68,24 @@ const itemData = [
   {
     img: 'src\\assets\\images\\IA Calvo.png',
     title: 'IA CALVO',
-    author: ['logo ts.svg'],
+    author: ['logo python.png', 'logo postgres.png'],
   },
   {
     img: 'src\\assets\\images\\painel pam.png',
     title: 'PAM',
-    author: ['logo react.png'],
+    author: ['logo python.png', 'logo postgres.png'],
     cols: 2,
   },
   {
     img: 'src\\assets\\images\\painel pevs.png',
     title: 'PEVS',
-    author: ['logo js.svg'],
+    author: ['logo python.png', 'logo postgres.png'],
     cols: 2,
   },
   {
     img: 'src\\assets\\images\\painel ppm.png',
     title: 'PPM',
-    author: ['logo react.png'],
+    author: ['logo python.png', 'logo postgres.png'],
     rows: 2,
     cols: 2,
     featured: true,
@@ -93,51 +93,51 @@ const itemData = [
   {
     img: 'src\\assets\\images\\painel conab.png',
     title: 'CONAB',
-    author: ['logo js.svg'],
+    author: ['logo python.png', 'logo postgres.png'],
   },
   {
     img: 'src\\assets\\images\\painel anp.png',
     title: 'ANP',
-    author: ['logo ts.svg'],
+    author: ['logo python.png', 'logo postgres.png'],
   },
   {
     img: 'src\\assets\\images\\painel pib municipal.png',
     title: 'PIB MUNICIPAL',
-    author: ['logo react.png'],
+    author: ['logo python.png', 'logo postgres.png'],
   },
   {
     img: 'src\\assets\\images\\painel abates.png',
     title: 'ABATE ANIMAIS',
-    author: ['logo js.svg'],
+    author: ['logo python.png', 'logo postgres.png'],
     rows: 2,
     cols: 2,
   },
   {
     img: 'src\\assets\\images\\painel estoques.png',
     title: 'ESTOQUES',
-    author: ['logo ts.svg'],
+    author: ['logo python.png', 'logo postgres.png'],
     rows: 2,
     cols: 2,
   },
   {
     img: 'src\\assets\\images\\painel pim.png',
     title: 'PIM',
-    author: ['logo react.png'],
+    author: ['logo python.png', 'logo postgres.png'],
   },
   {
     img: 'src\\assets\\images\\painel pms.png',
     title: 'PMS',
-    author: ['logo js.svg'],
+    author: ['logo python.png', 'logo postgres.png'],
   },
   {
     img: 'src\\assets\\images\\painel usda.png',
     title: 'USDA',
-    author: ['logo ts.svg'],
+    author: ['logo python.png', 'logo postgres.png'],
   },
   {
     img: 'src\\assets\\images\\painel ptl.png',
     title: 'PTL',
-    author: ['logo react.png'],
+    author: ['logo python.png', 'logo postgres.png'],
   },
 ];
 
@@ -171,14 +171,14 @@ export default function Projects() {
 
   // Estilos
   const StyleHero = styled("div")(({ theme }) => ({
-    backgroundColor: "white",
+    backgroundColor: "#0d0317",
     height: "100vh",
     display: "flex",
     alignItems: "center",
     justifyContent: "center", 
     flexDirection: "column",  
     [theme.breakpoints.up('xs')]: {
-      paddingTop: "100px", 
+      
       width: "100%"
     },
     [theme.breakpoints.up('md')]: {
@@ -189,17 +189,15 @@ export default function Projects() {
   const StyleImg = styled("img")(({ theme }) => ({
     objectFit: "contain", 
     [theme.breakpoints.down("sm")]: { 
-      width: "40px", 
-      height: "40px" 
+
     },
-    [theme.breakpoints.up("sm")]: { 
-      width: "100%",  
-      height: "100px", 
+    [theme.breakpoints.up("xs")]: { 
+
     },
   }));
   const LogoGallery = ({ logos }: { logos: string[] }) => {
     return (
-      <Box sx={{ display: 'flex', flexDirection: 'row', gap: { xs: '5px', sm: '10px' }, marginTop: 0 , padding:0}}>
+      <Box sx={{ display: 'flex', flexDirection: 'row', gap: { xs: '25px', sm: '8px' }, marginTop: 0 , padding:0}}>
         {logos.map((logo, index) => (
           <Box 
             key={index} 
@@ -207,15 +205,16 @@ export default function Projects() {
               display: "flex", 
               alignItems: "center", 
               justifyContent: "center", 
-              border: "2px solid purple",
-              width: "10%",
-              padding: "1px", // Para não colar a borda na imagem
+              
+              width: "fit-content",
+              padding: "2px", 
+              
             }}
           >
             <StyleImg 
               src={`src/assets/images/${logo}`} 
               alt={`Logo ${index + 1}`} 
-              sx={{ width: "30px", height: "auto" }} 
+              sx={{ width: { xs: "12px", sm: "30px" }, height: "auto" }} 
             />
           </Box>
         ))}
@@ -223,7 +222,12 @@ export default function Projects() {
     );
   };
   
-  
+  const StyleImageListItem = styled(ImageListItem) ({
+    width: "100%",
+    height: "100%", 
+    objectFit: "contain", 
+    fontSize:"1px"
+  }) 
 
   const StyleBox = styled("div")({
     display: 'flex',
@@ -233,22 +237,11 @@ export default function Projects() {
     padding: 0,
   });
 
-  const StyleIMGList = styled(ImageList)({
-    padding: '16px', 
-    backgroundColor: '#f5f5f5', 
-    borderRadius: '8px',  
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',  
-    height: 'auto',
-    overflowY: 'auto',  
-    alignItems: 'center',
-    display: 'flex',
-    opacity: 1, 
-  });
 
   return (
     <StyleHero>
-      <Container maxWidth="lg">
-        <Grid2 container spacing={2} sx={{ position: 'relative' }}>
+      <Container maxWidth="lg" >
+        <Grid2 container spacing={2} sx={{ position: 'relative', }}>
           <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', height: 'auto', padding: 0 }}>
             <StyleBox>
               <Tabs
@@ -268,9 +261,39 @@ export default function Projects() {
                   alignItems: 'center',
                 }}
               >
-                <Tab icon={<CodeIcon />} label="DEV" {...a11yProps(0)} sx={{ fontSize: '20px', fontWeight: 'bold' }} /> 
-                <Tab icon={<AddchartIcon />} label="DATA SCIENCE" {...a11yProps(1)} sx={{ fontSize: '20px', fontWeight: 'bold' }} /> 
-                <Tab icon={<ArchitectureIcon />} label="DESIGN" {...a11yProps(2)} sx={{ fontSize: '20px', fontWeight: 'bold' }} /> 
+                <Tab icon={<CodeIcon />} label="DEV" {...a11yProps(0)} sx={{ 
+                    fontSize: '20px', 
+                    fontWeight: 'bold',  
+                    color: "white", 
+                    borderRadius: 2,
+                    "&.Mui-selected": { 
+                    color: "black", 
+                    backgroundColor: "green"
+                    }
+                  }} 
+                /> 
+                <Tab icon={<AddchartIcon />} label="DATA SCIENCE" {...a11yProps(1)} 
+                sx={{ 
+                    fontSize: '20px', 
+                    fontWeight: 'bold',  
+                    color: "white", 
+                    borderRadius: 2,
+                    "&.Mui-selected": { 
+                    color: "black", 
+                    backgroundColor: "green"
+                    }
+                    }} /> 
+                <Tab icon={<ArchitectureIcon />} label="DESIGN" {...a11yProps(2)} 
+                sx={{ 
+                    fontSize: '20px', 
+                    fontWeight: 'bold',  
+                    color: "white", 
+                    borderRadius: 2,
+                    "&.Mui-selected": { 
+                    color: "black", 
+                    backgroundColor: "green"
+                    }
+                }} /> 
               </Tabs>
 
               <TabPanel value={value} index={0}>
@@ -280,29 +303,31 @@ export default function Projects() {
                   </ImageListItem>
                   {itemDev.map((item) => (
                     <ImageListItem key={item.img} sx={{ width: "100%", height: 180 }}>
-                      <img
-                        srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                        src={`${item.img}?w=248&fit=crop&auto=format`}
-                        alt={item.title}
-                        loading="lazy"
-                        style={{ width: "100%", height: "80%", objectFit: "cover" }}
-                      />
+                      <StyleImageListItem>
+                        <img
+                          srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                          src={`${item.img}?w=248&fit=crop&auto=format`}
+                          alt={item.title}
+                          loading="lazy"
+                        />
+                      </StyleImageListItem>
                       <ImageListItemBar
-                        title={item.title}
+                        title={<Typography sx={{ fontSize: { xs: '10px', sm: '20px' }, fontWeight: 'bold' }}>{item.title}</Typography>}
                         subtitle={<LogoGallery logos={item.author} />}
                         actionIcon={
-                          <IconButton
-                            sx={{ color: 'rgb(255, 255, 255)' }}
-                            aria-label={`info about ${item.title}`}
-                          >
-                            <HelpOutlineIcon />
+                          <IconButton sx={{ color: 'rgb(255, 255, 255)' , }} aria-label={`info about ${item.title}`}>
+                            <HelpOutlineIcon sx={{height:{xs:"15px", sm:"30px"}}}></HelpOutlineIcon>
                           </IconButton>
                         }
+                        sx={{    
+                          height: { xs: '40px', sm: 'auto' },
+                          padding: '4px'}}
                       />
                     </ImageListItem>
                   ))}
                 </ImageList>
               </TabPanel>
+
 
               <TabPanel value={value} index={1}>
                 <ImageList sx={{ width: "100%", height: 450, rowHeight: 180 }}>
@@ -311,26 +336,32 @@ export default function Projects() {
                   </ImageListItem>
                   {itemData.map((item) => (
                     <ImageListItem key={item.img} sx={{ width: "100%", height: 180 }}>
-                      <img
-                        srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                        src={`${item.img}?w=248&fit=crop&auto=format`}
-                        alt={item.title}
-                        loading="lazy"
-                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                      />
-                      <ImageListItemBar
-                        title={item.title}
-                        subtitle={<LogoGallery logos={item.author} />} // Usando o LogoGallery aqui
-                        actionIcon={
-                          <IconButton
-                            sx={{ color: 'rgb(255, 255, 255)' }}
-                            aria-label={`info about ${item.title}`}
-                          >
-                            <HelpOutlineIcon />
-                          </IconButton>
-                
-                        }
-                      />
+                      
+                      <StyleImageListItem>
+                        <img
+                          srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                          src={`${item.img}?w=248&fit=crop&auto=format`}
+                          alt={item.title}
+                          loading="lazy"
+                          style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                        />
+                        <ImageListItemBar
+                          title={<Typography sx={{ fontSize: { xs: '10px', sm: '20px' }, fontWeight: 'bold'}}>{item.title}</Typography>}
+                          subtitle={<LogoGallery logos={item.author} />} 
+                          actionIcon={
+                            <IconButton
+                              sx={{ color: 'rgb(255, 255, 255)' }}
+                              aria-label={`info about ${item.title}`}
+                            >
+                              <HelpOutlineIcon sx={{height:{xs:"15px", sm:"30px"}}}></HelpOutlineIcon>
+                            </IconButton>
+                          
+                          }
+                          sx={{    
+                            height: { xs: '40px', sm: 'auto' },
+                            padding: '4px'}}
+                        />
+                      </StyleImageListItem>
                     </ImageListItem>
                   ))}
                 </ImageList>

@@ -54,18 +54,19 @@ export default function Skills() {
 
   // Estilos
   const StyleHero = styled("div")(({ theme }) => ({
-    backgroundColor: "white",
+    backgroundColor: ` #0d0317`,
     height: "100vh",
     display: "flex",
     alignItems: "center",
     justifyContent: "center", 
     flexDirection: "column",  
     [theme.breakpoints.up('xs')]: {
-      paddingTop: "100px", // Ajuste para mobile
+     
       width: "100%"
     },
     [theme.breakpoints.up('md')]: {
       paddingTop: "0", // Ajuste para desktop
+      Bottom:0
     },
   }));
 
@@ -119,6 +120,13 @@ export default function Skills() {
     justifyContent: "center", 
     flexWrap: "wrap",
   };
+  const StyleTabsButtons = {
+    fontSize: '20px', 
+    fontWeight: 'bold',  
+    color: value === 0 ? "black" : "white", 
+    backgroundColor: value === 0 ? "green" : "transparent", 
+    borderRadius: 2 
+  }
 
   const StyleTabPanel = styled(Box)({
     padding: '16px', 
@@ -145,35 +153,56 @@ export default function Skills() {
             
           }}>
             <StyleBox>
-                <Tabs
-                  orientation="horizontal" 
-                  variant="scrollable"
-                  value={value}
-                  onChange={handleChange}
-                  aria-label="Vertical tabs example"
-                  scrollButtons
-                  allowScrollButtonsMobile
-                  centered
-                  sx={{
-                    borderColor: 'divider',
-                    display: 'flex', 
-                    flexDirection:'column',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    
-                  }}
-                >
-                    <Tab icon={<ManageAccountsIcon></ManageAccountsIcon>}label="SKILLS" {...a11yProps(0)} sx={{ fontSize: '20px', fontWeight: 'bold',  }} /> 
-                    <Tab icon={<LibraryBooksIcon></LibraryBooksIcon>} label="COURSES" {...a11yProps(1)} sx={{ fontSize: '20px', fontWeight: 'bold',  }} /> 
+            <Tabs
+              orientation="horizontal"
+              variant="scrollable"
+              value={value}
+              onChange={handleChange}
+              aria-label="Vertical tabs example"
+              scrollButtons
+              allowScrollButtonsMobile
+              centered
+              sx={{
+                borderColor: 'divider',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}
+            >
+              <Tab 
+                icon={<ManageAccountsIcon sx={{ color: "white" }} />} 
+                label="SKILLS" 
+                {...a11yProps(0)} 
+                sx={{ 
+                  fontSize: '20px', 
+                  fontWeight: 'bold',  
+                  color: value === 0 ? "black" : "white", 
+                  backgroundColor: value === 0 ? "green" : "transparent", 
+                  borderRadius: 2 
+                }} 
+              /> 
 
-                </Tabs>
+              <Tab 
+                icon={<LibraryBooksIcon sx={{ color: "white" }} />} 
+                label="COURSES" 
+                {...a11yProps(1)} 
+                sx={{ 
+                  fontSize: '20px', 
+                  fontWeight: 'bold',  
+                  color: value === 1 ? "black" : "white",  
+                  backgroundColor: value === 1 ? "green" : "transparent", 
+                  borderRadius: 2
+                }} 
+              /> 
+            </Tabs>
 
               
               <TabPanel value={value} index={0}>
                 <StyleTabPanel>
                   <List sx={StyleLIST}>
                     <ListItem>
-                      <Typography sx={{fontWeight: 'bold'}}>BACKEND:</Typography>
+                      <Typography sx={{fontWeight: 'bold', }}>BACKEND:</Typography>
                       <LogoGallery logos={logo_back} />
                     </ListItem>
                     <Divider component="li" />
