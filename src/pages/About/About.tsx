@@ -142,7 +142,40 @@ export default function Skills() {
 
   return (
     <StyleHero>
-      <Container maxWidth="lg">
+      <Container id="about" maxWidth="lg">
+        <Typography
+          sx={{
+            display: 'flex',
+            color: 'white',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '2rem',
+            position: 'relative',
+            overflow: 'hidden',
+            fontWeight: 'bold',
+            
+            '&::before': {
+              content: '""',
+              position: 'absolute',
+              width: {md:'30%', xs:"15%"}, 
+              height: '3px',
+              background: 'white',
+              top: '50%',
+              left: '0',
+              transform: 'translateY(-50%)',
+            },
+            '&::after': {
+              content: '""',
+              position: 'absolute',
+              width: {md:'30%', xs:"15%"}, 
+              height: '3px',
+              background: 'white',
+              top: '50%',
+              right: '0',
+              transform: 'translateY(-50%)',
+            },
+          }}
+          >TECHS AND EXP</Typography>
         <Grid2 container spacing={2} sx={{ position: 'relative' }}>
           <Box sx={{
             width: '100%',

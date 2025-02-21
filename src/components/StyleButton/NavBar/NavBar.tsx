@@ -1,26 +1,37 @@
-import { AppBar, MenuItem, styled, Toolbar } from "@mui/material"
+import { AppBar, MenuItem, styled, Toolbar,Box } from "@mui/material"
 
+
+import { Link as ScrollLink } from "react-scroll";  // Importando ScrollLink do react-scroll
 
 const NavBar = () => {
+  const StyleBar = styled(Toolbar)(() => ({
+    justifyContent: "space-evenly",
+    display: "flex",
+  }));
 
-    const StyleBar = styled(Toolbar)(({}) => ({
-        // border: `1px solid ${theme.palette.primary.contrastText}`,
-        justifyContent: "space-evenly",
-        display:"flex"
-   
-     }))
-    return (
-      <>
-        <AppBar position="absolute">
-            <StyleBar>
-                <MenuItem>About</MenuItem>
-                <MenuItem>Skills</MenuItem>
-                <MenuItem>Project</MenuItem>
-            </StyleBar>
-        </AppBar>
-      </>
-    )
-  }
-  
-  export default NavBar
-  
+  return (
+    <AppBar position="absolute">
+      <StyleBar>
+        <Box>
+          <ScrollLink to="about" smooth={true} duration={500}>
+            <MenuItem>About</MenuItem>
+          </ScrollLink>
+        </Box>
+
+        <Box>
+          <ScrollLink to="skills" smooth={true} duration={500}>
+            <MenuItem>Skills</MenuItem>
+          </ScrollLink>
+        </Box>
+
+        <Box>
+          <ScrollLink to="projects" smooth={true} duration={500}>
+            <MenuItem>Projects</MenuItem>
+          </ScrollLink>
+        </Box>
+      </StyleBar>
+    </AppBar>
+  );
+};
+
+export default NavBar;

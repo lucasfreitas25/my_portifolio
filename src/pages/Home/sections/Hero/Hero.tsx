@@ -6,7 +6,15 @@ import StyleButton from "../../../../components/StyleButton/StyleButton";
 import { AnimatedBackground } from "../../../../components/StyleButton/AnimatedBackgroud/AnimatedBackgroud";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import useRedirect from "../../../../components/StyleButton/Buttons/Button_down";
+
+
 const Hero = () => {
+
+  const redirectToWhatsApp = useRedirect("https://wa.me/5565996474929");
+  const redirectToLinkedin= useRedirect("https://br.linkedin.com/in/lucasfreitas-tech");
+  const redirectToGithub= useRedirect("https://github.com/lucasfreitas25");
+  const redirectToCurriculo= useRedirect("https://drive.google.com/file/d/12PdZCSu8i_mPxgEiieT7bx-qhl91SO4V/view?usp=sharing");
 
   const StyleHero = styled("div")(({theme}) => ( {
     backgroundColor: `#0d0317`,
@@ -37,6 +45,7 @@ const Hero = () => {
       '-2px 2px 0 #000', 
   }));
   
+
 
     return (
       <>
@@ -74,13 +83,13 @@ const Hero = () => {
                 </StyleText>
                 <Grid2 container display={"flex"} justifyContent={"center"} spacing={3}>
                   <Grid2 size={{ xs: 12, md: 4 }} display={"flex"} justifyContent={"center"}>
-                    <StyleButton onClick={() => console.log("download")}>
+                    <StyleButton onClick={(redirectToCurriculo)}>
                       <CloudDownloadIcon></CloudDownloadIcon>
                       <Typography>Download Resume</Typography>
                     </StyleButton>
                   </Grid2>
                   <Grid2 size={{ xs: 12, md: 4 }} display={"flex"} justifyContent={"center"}>
-                    <StyleButton onClick={() => console.log("contato")}>
+                    <StyleButton onClick={(redirectToWhatsApp)}>
                       <ContactPageIcon></ContactPageIcon>
                       <Typography>Contact me</Typography>
                     </StyleButton>
@@ -88,12 +97,12 @@ const Hero = () => {
                 </Grid2>
                 <Grid2 container display={"flex"} justifyContent={"center"} spacing={3} paddingTop={3}>
                   <Grid2 size={{ xs: 12, md: 4 }} display={"inline-flex"} justifyContent={"center"}>
-                      <IconButton sx={{ color: 'rgb(255, 255, 255)' }}>
+                      <IconButton onClick={(redirectToLinkedin)} sx={{ color: 'rgb(255, 255, 255)' }}>
                         <LinkedInIcon></LinkedInIcon>
                       </IconButton>
                     </Grid2>
                     <Grid2 size={{ xs: 12, md: 4 }} display={"inline-flex"} justifyContent={"center"}>
-                      <IconButton sx={{ color: 'rgb(255, 255, 255)' }}>
+                      <IconButton onClick={(redirectToGithub)} sx={{ color: 'rgb(255, 255, 255)' }}>
                         <GitHubIcon></GitHubIcon>
                       </IconButton>
                     </Grid2>

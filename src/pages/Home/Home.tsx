@@ -1,4 +1,4 @@
-import NavBar from "../../components/StyleButton/NavBar/NavBar"
+
 import Hero from "./sections/Hero/Hero"
 
 const Home = () => {
@@ -6,7 +6,7 @@ const Home = () => {
 
     return (
       <>
-        <NavBar></NavBar>
+        {/* <NavBar></NavBar> */}
         <Hero></Hero>
       </>
     )

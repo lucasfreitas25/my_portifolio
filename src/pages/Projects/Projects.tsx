@@ -1,15 +1,17 @@
-import { Box, Container, Divider, Grid2, Icon, IconButton, ImageList, ImageListItem, ImageListItemBar, ListSubheader, Tab, Tabs, Typography, styled } from "@mui/material";
+import { Box, Container, Grid2, IconButton, ImageList, ImageListItem, ImageListItemBar, ListSubheader, Tab, Tabs, Typography, styled } from "@mui/material";
 import React from "react";
 import ArchitectureIcon from '@mui/icons-material/Architecture';
 import CodeIcon from '@mui/icons-material/Code';
 import AddchartIcon from '@mui/icons-material/Addchart';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import useRedirect from "../../components/StyleButton/Buttons/Button_down";
 
 const itemDev = [
   {
     img: 'src\\assets\\images\\imagem portfolio.png',
     title: 'Portfólio',
     author: ['logo js.svg', 'logo react.png'],
+    local: 'https://github.com/lucasfreitas25/my_portifolio'
   },
   {
     img: 'src\\assets\\images\\crud .png',
@@ -18,33 +20,39 @@ const itemDev = [
     rows: 2,
     cols: 2,
     featured: true,
+    local:'https://github.com/lucasfreitas25/Trabalho-CRUD'
   },
   {
     img: 'src\\assets\\images\\Sistema inteligente.png',
     title: 'SISTEMA INTELIGENTE FREITULITOS',
     author: ['logo python.png', 'logo postgres.png'],
+    local: 'https://github.com/lucasfreitas25/IA_sistema_inteligente'
   },
   {
     img: 'src\\assets\\images\\linktree freitulitos.png',
     title: 'LinkTree Custom',
     author: ['logo js.svg', "logo CSS.png", "logo HTML.png"],
     cols: 2,
+    local:'https://github.com/lucasfreitas25/Projeto-Frontend'
   },
   {
     img: 'src\\assets\\images\\site trojan.png',
     title: 'SITE TROJAN',
     author: ['logo js.svg', "logo CSS.png", "logo HTML.png"],
+    local:"https://github.com/lucasfreitas25/Site-TROJAN"
   },
   {
     img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
     title: 'Contador de TAGS',
     author: ['logo node.png', 'logo postgres.png'],
+    local: 'https://github.com/lucasfreitas25/TestePratico_NUTI'
   },
   {
     img: 'src\\assets\\images\\APP freitulitos.jpg',
     title: 'FreitulitosAPP',
     author: ['logo js.svg', "logo CSS.png", "logo HTML.png"],
     cols: 2,
+    local:'https://github.com/lucasfreitas25/FreitulitosAPP'
   },
   {
     img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
@@ -53,6 +61,7 @@ const itemDev = [
     rows: 2,
     cols: 2,
     featured: true,
+    local:'https://github.com/lucasfreitas25/FirstAPI'
   },
 ];
 
@@ -240,7 +249,42 @@ export default function Projects() {
 
   return (
     <StyleHero>
-      <Container maxWidth="lg" >
+      <Container id="projects"  maxWidth="lg" >
+      <Typography
+          sx={{
+            display: 'flex',
+            color: 'white',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '2rem',
+            position: 'relative',
+            overflow: 'hidden',
+            fontWeight: 'bold',
+            
+            '&::before': {
+              content: '""',
+              position: 'absolute',
+              width: {md:'30%', xs:0}, 
+              height: '3px',
+              background: 'white',
+              top: '50%',
+              left: '0',
+              transform: 'translateY(-50%)',
+            },
+            '&::after': {
+              content: '""',
+              position: 'absolute',
+              width: {md:'30%', xs:0}, 
+              height: '3px',
+              background: 'white',
+              top: '50%',
+              right: '0',
+              transform: 'translateY(-50%)',
+            },
+          }}
+          >
+        PROJECTS MANAGEMENT
+      </Typography>
         <Grid2 container spacing={2} sx={{ position: 'relative', }}>
           <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', height: 'auto', padding: 0 }}>
             <StyleBox>
@@ -309,13 +353,15 @@ export default function Projects() {
                           src={`${item.img}?w=248&fit=crop&auto=format`}
                           alt={item.title}
                           loading="lazy"
+                          
                         />
                       </StyleImageListItem>
+                      
                       <ImageListItemBar
                         title={<Typography sx={{ fontSize: { xs: '10px', sm: '20px' }, fontWeight: 'bold' }}>{item.title}</Typography>}
                         subtitle={<LogoGallery logos={item.author} />}
                         actionIcon={
-                          <IconButton sx={{ color: 'rgb(255, 255, 255)' , }} aria-label={`info about ${item.title}`}>
+                          <IconButton onClick={useRedirect(item.local)} sx={{ color: 'rgb(255, 255, 255)' , }} aria-label={`info about ${item.title}`}>
                             <HelpOutlineIcon sx={{height:{xs:"15px", sm:"30px"}}}></HelpOutlineIcon>
                           </IconButton>
                         }
