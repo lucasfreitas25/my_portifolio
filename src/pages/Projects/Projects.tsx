@@ -42,7 +42,7 @@ const itemDev = [
     local:"https://github.com/lucasfreitas25/Site-TROJAN"
   },
   {
-    img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
+    img: 'src\\assets\\images\\contador de tags.PNG',
     title: 'Contador de TAGS',
     author: ['logo node.png', 'logo postgres.png'],
     local: 'https://github.com/lucasfreitas25/TestePratico_NUTI'
@@ -55,7 +55,7 @@ const itemDev = [
     local:'https://github.com/lucasfreitas25/FreitulitosAPP'
   },
   {
-    img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
+    img: 'src\\assets\\images\\firstapi test.png',
     title: 'FirstAPI',
     author: ['logo python.png'],
     rows: 2,
