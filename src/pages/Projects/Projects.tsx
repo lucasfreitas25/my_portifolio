@@ -312,7 +312,7 @@ export default function Projects() {
                     borderRadius: 2,
                     "&.Mui-selected": { 
                     color: "black", 
-                    backgroundColor: "green"
+                    backgroundColor: "white"
                     }
                   }} 
                 /> 
@@ -324,7 +324,7 @@ export default function Projects() {
                     borderRadius: 2,
                     "&.Mui-selected": { 
                     color: "black", 
-                    backgroundColor: "green"
+                    backgroundColor: "white"
                     }
                     }} /> 
                 <Tab icon={<ArchitectureIcon />} label="DESIGN" {...a11yProps(2)} 
@@ -335,7 +335,7 @@ export default function Projects() {
                     borderRadius: 2,
                     "&.Mui-selected": { 
                     color: "black", 
-                    backgroundColor: "green"
+                    backgroundColor: "white"
                     }
                 }} /> 
               </Tabs>

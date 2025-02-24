@@ -204,27 +204,27 @@ export default function Skills() {
               }}
             >
               <Tab 
-                icon={<ManageAccountsIcon sx={{ color: "white" }} />} 
+                icon={<ManageAccountsIcon sx={{ }} />} 
                 label="SKILLS" 
                 {...a11yProps(0)} 
                 sx={{ 
                   fontSize: '20px', 
                   fontWeight: 'bold',  
                   color: value === 0 ? "black" : "white", 
-                  backgroundColor: value === 0 ? "green" : "transparent", 
+                  backgroundColor: value === 0 ? "white" : "transparent", 
                   borderRadius: 2 
                 }} 
               /> 
 
               <Tab 
-                icon={<LibraryBooksIcon sx={{ color: "white" }} />} 
+                icon={<LibraryBooksIcon sx={{ }} />} 
                 label="COURSES" 
                 {...a11yProps(1)} 
                 sx={{ 
                   fontSize: '20px', 
                   fontWeight: 'bold',  
                   color: value === 1 ? "black" : "white",  
-                  backgroundColor: value === 1 ? "green" : "transparent", 
+                  backgroundColor: value === 1 ? "white" : "transparent", 
                   borderRadius: 2
                 }} 
               /> 
