@@ -4,6 +4,7 @@ import StyleButton from "../../components/StyleButton/StyleButton";
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import useRedirect from "../../components/StyleButton/Buttons/Button_down";
 
 const logo_back = [
   'logo_C.png',
@@ -262,7 +263,7 @@ export default function Skills() {
                         <Typography sx={{ fontWeight: 'bold' }}>CURSO:</Typography>
                         <Typography sx={{ fontWeight: 'bold' }}>Google Data Analytics, 2023</Typography>
                       </Box>
-                      <StyleButton onClick={() => console.log("download")} width="13%" backgroundColor="green">
+                      <StyleButton onClick={useRedirect("https://drive.google.com/file/d/12dIvDeDNfOtk0fNCxBy2XNx_nQ6jK8zx/view?usp=sharing")} width="13%" backgroundColor="green">
                         <WorkspacePremiumIcon />
                         <Typography sx={{display: { xs: 'none', sm: 'block' } }}>Certificado</Typography>
                       </StyleButton>
@@ -275,7 +276,7 @@ export default function Skills() {
                         <Typography sx={{ fontWeight: 'bold' }}>CURSO:</Typography>
                         <Typography sx={{ fontWeight: 'bold' }}>Santander Bootcamp Cibersegurança, 2024</Typography>
                       </Box>
-                      <StyleButton onClick={() => console.log("download")} width="13%" backgroundColor="green">
+                      <StyleButton onClick={useRedirect("https://drive.google.com/file/d/1DshIogGFTKftCdZLAeQqW3ayFexesLT6/view?usp=sharing")} width="13%" backgroundColor="green">
                         <WorkspacePremiumIcon />
                         <Typography sx={{display: { xs: 'none', sm: 'block' } }}>Certificado</Typography>
                       </StyleButton>
@@ -288,7 +289,7 @@ export default function Skills() {
                         <Typography sx={{ fontWeight: 'bold' }}>CURSO:</Typography>
                         <Typography sx={{ fontWeight: 'bold' }}>Bootcamp Nexa - Machine Learning para Iniciantes na AWS</Typography>
                       </Box>
-                      <StyleButton onClick={() => console.log("download")} width="13%" backgroundColor="green">
+                      <StyleButton onClick={useRedirect("https://drive.google.com/file/d/1q88H4SEDNKs3joz39ptoQ4X2LxobYE5C/view?usp=sharing")} width="13%" backgroundColor="green">
                         <WorkspacePremiumIcon />
                         <Typography sx={{display: { xs: 'none', sm: 'block' } }}>Certificado</Typography>
                       </StyleButton>
@@ -301,7 +302,7 @@ export default function Skills() {
                         <Typography sx={{ fontWeight: 'bold' }}>CURSO:</Typography>
                         <Typography sx={{ fontWeight: 'bold' }}>Python Data Analytics, 2024</Typography>
                       </Box>
-                      <StyleButton onClick={() => console.log("download")} width="13%" backgroundColor="green">
+                      <StyleButton onClick={useRedirect("https://drive.google.com/file/d/1n1HY0NkSoG9i4N-df5Un3U4d6LeOdrlV/view?usp=sharing")} width="13%" backgroundColor="green">
                         <WorkspacePremiumIcon />
                         <Typography sx={{display: { xs: 'none', sm: 'block' } }}>Certificado</Typography>
                       </StyleButton>
@@ -314,7 +315,7 @@ export default function Skills() {
                         <Typography sx={{ fontWeight: 'bold' }}>CURSO:</Typography>
                         <Typography sx={{ fontWeight: 'bold', fontSize:{xs:"15px"}}}>Santander 2024 - Fundamentos de IA para Devs, 2024</Typography>
                       </Box>
-                      <StyleButton onClick={() => console.log("download")} width="13%" backgroundColor="green" >
+                      <StyleButton onClick={useRedirect("https://drive.google.com/file/d/1GNstk6AzRta9ODE01Jp2EdPzBYiz_SRG/view?usp=sharing")} width="13%" backgroundColor="green" >
                         <WorkspacePremiumIcon />
                         <Typography sx={{display: { xs: 'none', sm: 'block' } }}>Certificado</Typography>
                       </StyleButton>
