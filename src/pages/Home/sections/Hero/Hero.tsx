@@ -15,7 +15,7 @@ const Hero = () => {
   const redirectToLinkedin= useRedirect("https://br.linkedin.com/in/lucasfreitas-tech");
   const redirectToGithub= useRedirect("https://github.com/lucasfreitas25");
   const redirectToCurriculo= useRedirect("https://drive.google.com/file/d/12PdZCSu8i_mPxgEiieT7bx-qhl91SO4V/view?usp=sharing");
-
+  
   const StyleHero = styled("div")(({theme}) => ( {
     backgroundColor: `#0d0317`,
     height: "100vh",

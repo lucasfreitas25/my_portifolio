@@ -1,10 +1,10 @@
-import { Box, Container, Divider, Grid2, List, ListItem, Tab, Tabs, Typography, styled } from "@mui/material";
+import { Box, Button, Container, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, Grid2, List, ListItem, Tab, Tabs, Typography, styled } from "@mui/material";
 import React from "react";
-import StyleButton from "../../components/StyleButton/StyleButton";
+import StyleButton from "../../../components/StyleButton/StyleButton";
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
-import useRedirect from "../../components/StyleButton/Buttons/Button_down";
+import useRedirect from "../../../components/StyleButton/Buttons/Button_down";
 
 const logo_back = [
   'logo_C.png',
@@ -121,13 +121,6 @@ export default function Skills() {
     justifyContent: "center", 
     flexWrap: "wrap",
   };
-  const StyleTabsButtons = {
-    fontSize: '20px', 
-    fontWeight: 'bold',  
-    color: value === 0 ? "black" : "white", 
-    backgroundColor: value === 0 ? "green" : "transparent", 
-    borderRadius: 2 
-  }
 
   const StyleTabPanel = styled(Box)({
     padding: '16px', 
@@ -140,10 +133,17 @@ export default function Skills() {
     display: 'flex',
     opacity: 1, 
   });
+  const [open, setOpen] = React.useState(false);
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
 
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <StyleHero>
-      <Container id="about" maxWidth="lg">
+      <Container id="skills" maxWidth="lg">
         <Typography
           sx={{
             display: 'flex',
@@ -226,6 +226,18 @@ export default function Skills() {
                   fontWeight: 'bold',  
                   color: value === 1 ? "black" : "white",  
                   backgroundColor: value === 1 ? "white" : "transparent", 
+                  borderRadius: 2
+                }} 
+              /> 
+              <Tab 
+                icon={<LibraryBooksIcon sx={{ }} />} 
+                label="EXP" 
+                {...a11yProps(2)} 
+                sx={{ 
+                  fontSize: '20px', 
+                  fontWeight: 'bold',  
+                  color: value === 2 ? "black" : "white",  
+                  backgroundColor: value === 2 ? "white" : "transparent", 
                   borderRadius: 2
                 }} 
               /> 
@@ -320,6 +332,57 @@ export default function Skills() {
                         <Typography sx={{display: { xs: 'none', sm: 'block' } }}>Certificado</Typography>
                       </StyleButton>
                     </ListItem>
+                  </List>
+                </StyleTabPanel>
+              </TabPanel>
+
+              <TabPanel value={value} index={2}>
+                <StyleTabPanel>
+                  <List sx={StyleLIST}>
+                   
+                    <ListItem sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <Box>
+                        <Typography sx={{ fontWeight: 'bold' }}>MEI:</Typography>
+                        <Typography sx={{ fontWeight: 'bold' }}>FREITULITOS, 2022-ATUALMENTE</Typography>
+                      </Box>
+                      <Button variant="outlined" onClick={handleClickOpen}>
+                          SHOW MORE
+                        </Button>
+                        <Dialog
+                          open={open}
+                          onClose={handleClose}
+                          aria-labelledby="alert-dialog-title"
+                          aria-describedby="alert-dialog-description"
+                        >
+
+                          <DialogContent>
+                            <DialogContentText id="alert-dialog-description">
+                              Sou produtor e vendedor de cookies e alfajores artesanais. Minha função é preparar os doces com ingredientes de qualidade, garantindo sabor e frescor em cada unidade. Além de produzir, 
+                              também sou responsável pelas vendas e o marketing, oferecendo um atendimento personalizado e garantindo que cada cliente tenha a melhor experiência ao saborear meus produtos
+                            </DialogContentText>
+                          </DialogContent>
+                          <DialogActions>
+                            <Button onClick={handleClose}>Fechar</Button>
+                          </DialogActions>
+                        </Dialog>
+                    </ListItem>
+                    <Divider component="li" />
+
+                    
+                    <ListItem sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <Box>
+                        <Typography sx={{ fontWeight: 'bold' }}>ESTAGIARIO:</Typography>
+                        <Typography sx={{ fontWeight: 'bold' }}>Secretaria de Desenvolvimento Econômico do Mato Grosso, 2023-ATUALMENTE</Typography>
+                      </Box>
+                      <StyleButton onClick={useRedirect("https://drive.google.com/file/d/1DshIogGFTKftCdZLAeQqW3ayFexesLT6/view?usp=sharing")} width="13%" backgroundColor="green">
+                        <WorkspacePremiumIcon />
+                        <Typography sx={{display: { xs: 'none', sm: 'block' } }}>Certificado</Typography>
+                      </StyleButton>
+                    </ListItem>
+                    <Divider component="li" />
+
+                    
+
                   </List>
                 </StyleTabPanel>
               </TabPanel>

@@ -1,15 +1,17 @@
 import NavBar from "./components/StyleButton/NavBar/NavBar"
-import About from "./pages/About/About"
+import Skout from "./pages/About/Skout"
 import Home from "./pages/Home/Home"
 import Projects from "./pages/Projects/Projects"
-const App = () => {
 
+
+const App = () => {
+ 
 
   return (
     <>
       <NavBar></NavBar>
       <Home></Home>
-      <About></About>
+      <Skout></Skout>
       <Projects></Projects>
     </>
   )
