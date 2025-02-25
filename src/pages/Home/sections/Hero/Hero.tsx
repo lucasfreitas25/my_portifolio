@@ -7,6 +7,7 @@ import { AnimatedBackground } from "../../../../components/StyleButton/AnimatedB
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import useRedirect from "../../../../components/StyleButton/Buttons/Button_down";
+import { useTranslation } from "react-i18next";
 
 
 const Hero = () => {
@@ -15,7 +16,7 @@ const Hero = () => {
   const redirectToLinkedin= useRedirect("https://br.linkedin.com/in/lucasfreitas-tech");
   const redirectToGithub= useRedirect("https://github.com/lucasfreitas25");
   const redirectToCurriculo= useRedirect("https://drive.google.com/file/d/12PdZCSu8i_mPxgEiieT7bx-qhl91SO4V/view?usp=sharing");
-  
+  const { t, i18n } = useTranslation();
   const StyleHero = styled("div")(({theme}) => ( {
     backgroundColor: `#0d0317`,
     height: "100vh",
@@ -78,20 +79,20 @@ const Hero = () => {
                     textAlign={"center"} 
                     pb={2}
                   >
-                    I'm a Software Dev and Data Scientist
+                    {t("inicio")}
                   </Typography>
                 </StyleText>
                 <Grid2 container display={"flex"} justifyContent={"center"} spacing={3}>
                   <Grid2 size={{ xs: 12, md: 4 }} display={"flex"} justifyContent={"center"}>
                     <StyleButton onClick={(redirectToCurriculo)}>
                       <CloudDownloadIcon></CloudDownloadIcon>
-                      <Typography>Download Resume</Typography>
+                      <Typography>{t("curiculo")}</Typography>
                     </StyleButton>
                   </Grid2>
                   <Grid2 size={{ xs: 12, md: 4 }} display={"flex"} justifyContent={"center"}>
                     <StyleButton onClick={(redirectToWhatsApp)}>
                       <ContactPageIcon></ContactPageIcon>
-                      <Typography>Contact me</Typography>
+                      <Typography>{t("contato")}</Typography>
                     </StyleButton>
                   </Grid2>
                 </Grid2>

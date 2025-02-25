@@ -2,12 +2,14 @@ import { AppBar, MenuItem, styled, Toolbar, Box, Button } from "@mui/material";
 import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from 'react-i18next';
 import Flag from 'react-world-flags';
+import { t } from "i18next";
+// import { changeLanguage } from "i18next";
 
 const NavBar = () => {
-  const { i18n } = useTranslation(); // Para usar a funcionalidade de troca de idioma
+  const { i18n } = useTranslation(); 
 
-  const handleLanguageChange = (lang: string) => {
-    i18n.changeLanguage(lang); // Muda o idioma
+  const changeLanguage = (language: string | undefined) => {
+    i18n.changeLanguage(language);
   };
 
   const StyleBar = styled(Toolbar)(() => ({
@@ -24,11 +26,11 @@ const NavBar = () => {
         <Box sx={{
           display: 'flex',
           justifyContent: 'center',
-          flexGrow: 1, // Para que os links ocupem o espaço central
-          gap: { md: '150px', xs:"15px"}, // Espaço entre os itens de navegação
+          flexGrow: 1, 
+          gap: { md: '150px', xs:"15px"},
         }}>
           <ScrollLink to="about" smooth={true} duration={500}>
-            <MenuItem>About</MenuItem>
+            <MenuItem>{t("mim")}</MenuItem>
           </ScrollLink>
 
           <ScrollLink to="skills" smooth={true} duration={500}>
@@ -36,7 +38,7 @@ const NavBar = () => {
           </ScrollLink>
 
           <ScrollLink to="projects" smooth={true} duration={500}>
-            <MenuItem>Projects</MenuItem>
+            <MenuItem>{t("projetos")}</MenuItem>
           </ScrollLink>
         </Box>
 
@@ -54,21 +56,21 @@ const NavBar = () => {
           }}
         >
           <Button
-            onClick={() => handleLanguageChange('en')}
+            onClick={() => changeLanguage("en")}
             sx={{
-              padding: 0,  // Remove o padding do botão
-              width: {md:'20px', xs:"10px"}, // Define a largura da bandeira
-              height: {md:'20px',xs:"10px"}  // Define a altura da bandeira
+              padding: 0,  
+              width: {md:'20px', xs:"10px"}, 
+              height: {md:'20px',xs:"10px"}  
             }}
           >
             <Flag code="US" style={{ width: '100%', height: '100%' }} />
           </Button>
           <Button
-            onClick={() => handleLanguageChange('pt')}
+            onClick={() => changeLanguage("pt")}
             sx={{
-              padding: 0,  // Remove o padding do botão
-              width: {md:'30px', xs:"10px"}, // Define a largura da bandeira
-              height: {md:'20px', xs:"10px"},  // Define a altura da bandeira
+              padding: 0,  
+              width: {md:'30px', xs:"10px"}, 
+              height: {md:'20px', xs:"10px"},  
             }}
           >
             <Flag code="BR" style={{ width: '100%', height: '100%' }} />

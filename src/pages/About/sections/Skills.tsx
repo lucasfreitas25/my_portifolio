@@ -4,7 +4,9 @@ import StyleButton from "../../../components/StyleButton/StyleButton";
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 import useRedirect from "../../../components/StyleButton/Buttons/Button_down";
+import { useTranslation } from "react-i18next";
 
 const logo_back = [
   'logo_C.png',
@@ -27,7 +29,6 @@ const logo_bd = [
 
 function TabPanel(props: { children?: React.ReactNode; index: number; value: number }) {
   const { children, value, index, ...other } = props;
-
   return (
     <div role="tabpanel" hidden={value !== index} {...other}>
       {value === index && (
@@ -48,7 +49,8 @@ function a11yProps(index: number) {
 
 export default function Skills() {
   const [value, setValue] = React.useState(0);
-
+  
+  const { t, i18n } = useTranslation();
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
@@ -213,24 +215,36 @@ export default function Skills() {
                   fontWeight: 'bold',  
                   color: value === 0 ? "black" : "white", 
                   backgroundColor: value === 0 ? "white" : "transparent", 
-                  borderRadius: 2 
+                  borderRadius: 2,
+                  transition: 'transform 0.3s ease, opacity 0.3s ease', // Suaviza a transformação e opacidade
+                  transform: value === 0 ? 'scale(1.05)' : 'scale(1)', // Efeito de escala para a tab selecionada
+                  opacity: value === 0 ? 1 : 0.7, // Opacidade para a tab selecionada
+                  '&:hover': {
+                    transform: 'scale(1.1)', // Aumenta a escala quando o mouse passa sobre a Tab
+                  },
                 }} 
               /> 
 
               <Tab 
                 icon={<LibraryBooksIcon sx={{ }} />} 
-                label="COURSES" 
+                label={t("cursos")} 
                 {...a11yProps(1)} 
                 sx={{ 
                   fontSize: '20px', 
                   fontWeight: 'bold',  
                   color: value === 1 ? "black" : "white",  
                   backgroundColor: value === 1 ? "white" : "transparent", 
-                  borderRadius: 2
+                  borderRadius: 2,
+                  transition: 'transform 0.3s ease, opacity 0.3s ease', // Suaviza a transformação e opacidade
+                  transform: value === 0 ? 'scale(1.05)' : 'scale(1)', // Efeito de escala para a tab selecionada
+                  opacity: value === 0 ? 1 : 0.7, // Opacidade para a tab selecionada
+                  '&:hover': {
+                    transform: 'scale(1.1)', // Aumenta a escala quando o mouse passa sobre a Tab
+                  },
                 }} 
               /> 
               <Tab 
-                icon={<LibraryBooksIcon sx={{ }} />} 
+                icon={<PersonAddAlt1Icon sx={{ }} />} 
                 label="EXP" 
                 {...a11yProps(2)} 
                 sx={{ 
@@ -238,7 +252,13 @@ export default function Skills() {
                   fontWeight: 'bold',  
                   color: value === 2 ? "black" : "white",  
                   backgroundColor: value === 2 ? "white" : "transparent", 
-                  borderRadius: 2
+                  borderRadius: 2,
+                  transition: 'transform 0.3s ease, opacity 0.3s ease', // Suaviza a transformação e opacidade
+                  transform: value === 0 ? 'scale(1.05)' : 'scale(1)', // Efeito de escala para a tab selecionada
+                  opacity: value === 0 ? 1 : 0.7, // Opacidade para a tab selecionada
+                  '&:hover': {
+                    transform: 'scale(1.1)', // Aumenta a escala quando o mouse passa sobre a Tab
+                  },
                 }} 
               /> 
             </Tabs>
@@ -248,17 +268,17 @@ export default function Skills() {
                 <StyleTabPanel>
                   <List sx={StyleLIST}>
                     <ListItem>
-                      <Typography sx={{fontWeight: 'bold', }}>BACKEND:</Typography>
+                      <Typography sx={{fontWeight: 'bold', fontSize:{md:"17px",xs:"12px"}}}>BACKEND:</Typography>
                       <LogoGallery logos={logo_back} />
                     </ListItem>
                     <Divider component="li" />
                     <ListItem>
-                      <Typography sx={{fontWeight: 'bold'}}>FRONTEND:</Typography>
+                      <Typography sx={{fontWeight: 'bold', fontSize:{md:"17px",xs:"12px"}}}>FRONTEND:</Typography>
                       <LogoGallery logos={logo_front} />
                     </ListItem>
                     <Divider component="li" />
                     <ListItem>
-                      <Typography sx={{fontWeight: 'bold'}}>BANCO DE DADOS:</Typography>
+                      <Typography sx={{fontWeight: 'bold',fontSize:{md:"17px",xs:"12px"}}}>BD:</Typography>
                       <LogoGallery logos={logo_bd} />
                     </ListItem>
                 
@@ -272,12 +292,12 @@ export default function Skills() {
                    
                     <ListItem sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <Box>
-                        <Typography sx={{ fontWeight: 'bold' }}>CURSO:</Typography>
+                        <Typography sx={{ fontWeight: 'bold' }}>{t("curso")}:</Typography>
                         <Typography sx={{ fontWeight: 'bold' }}>Google Data Analytics, 2023</Typography>
                       </Box>
                       <StyleButton onClick={useRedirect("https://drive.google.com/file/d/12dIvDeDNfOtk0fNCxBy2XNx_nQ6jK8zx/view?usp=sharing")} width="13%" backgroundColor="green">
                         <WorkspacePremiumIcon />
-                        <Typography sx={{display: { xs: 'none', sm: 'block' } }}>Certificado</Typography>
+                        <Typography sx={{display: { xs: 'none', sm: 'block' } }}>{t("certificado")}</Typography>
                       </StyleButton>
                     </ListItem>
                     <Divider component="li" />
@@ -285,12 +305,12 @@ export default function Skills() {
                     
                     <ListItem sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <Box>
-                        <Typography sx={{ fontWeight: 'bold' }}>CURSO:</Typography>
+                        <Typography sx={{ fontWeight: 'bold' }}>{t("curso")}:</Typography>
                         <Typography sx={{ fontWeight: 'bold' }}>Santander Bootcamp Cibersegurança, 2024</Typography>
                       </Box>
                       <StyleButton onClick={useRedirect("https://drive.google.com/file/d/1DshIogGFTKftCdZLAeQqW3ayFexesLT6/view?usp=sharing")} width="13%" backgroundColor="green">
                         <WorkspacePremiumIcon />
-                        <Typography sx={{display: { xs: 'none', sm: 'block' } }}>Certificado</Typography>
+                        <Typography sx={{display: { xs: 'none', sm: 'block' } }}>{t("certificado")}</Typography>
                       </StyleButton>
                     </ListItem>
                     <Divider component="li" />
@@ -298,12 +318,12 @@ export default function Skills() {
                     
                     <ListItem sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <Box>
-                        <Typography sx={{ fontWeight: 'bold' }}>CURSO:</Typography>
+                        <Typography sx={{ fontWeight: 'bold' }}>{t("curso")}:</Typography>
                         <Typography sx={{ fontWeight: 'bold' }}>Bootcamp Nexa - Machine Learning para Iniciantes na AWS</Typography>
                       </Box>
                       <StyleButton onClick={useRedirect("https://drive.google.com/file/d/1q88H4SEDNKs3joz39ptoQ4X2LxobYE5C/view?usp=sharing")} width="13%" backgroundColor="green">
                         <WorkspacePremiumIcon />
-                        <Typography sx={{display: { xs: 'none', sm: 'block' } }}>Certificado</Typography>
+                        <Typography sx={{display: { xs: 'none', sm: 'block' } }}>{t("certificado")}</Typography>
                       </StyleButton>
                     </ListItem>
                     <Divider component="li" />
@@ -311,12 +331,12 @@ export default function Skills() {
                     
                     <ListItem sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <Box>
-                        <Typography sx={{ fontWeight: 'bold' }}>CURSO:</Typography>
+                        <Typography sx={{ fontWeight: 'bold' }}>{t("curso")}:</Typography>
                         <Typography sx={{ fontWeight: 'bold' }}>Python Data Analytics, 2024</Typography>
                       </Box>
                       <StyleButton onClick={useRedirect("https://drive.google.com/file/d/1n1HY0NkSoG9i4N-df5Un3U4d6LeOdrlV/view?usp=sharing")} width="13%" backgroundColor="green">
                         <WorkspacePremiumIcon />
-                        <Typography sx={{display: { xs: 'none', sm: 'block' } }}>Certificado</Typography>
+                        <Typography sx={{display: { xs: 'none', sm: 'block' } }}>{t("certificado")}</Typography>
                       </StyleButton>
                     </ListItem>
                     <Divider component="li" />
@@ -324,12 +344,12 @@ export default function Skills() {
                     
                     <ListItem sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <Box>
-                        <Typography sx={{ fontWeight: 'bold' }}>CURSO:</Typography>
+                        <Typography sx={{ fontWeight: 'bold' }}>{t("curso")}:</Typography>
                         <Typography sx={{ fontWeight: 'bold', fontSize:{xs:"15px"}}}>Santander 2024 - Fundamentos de IA para Devs, 2024</Typography>
                       </Box>
                       <StyleButton onClick={useRedirect("https://drive.google.com/file/d/1GNstk6AzRta9ODE01Jp2EdPzBYiz_SRG/view?usp=sharing")} width="13%" backgroundColor="green" >
                         <WorkspacePremiumIcon />
-                        <Typography sx={{display: { xs: 'none', sm: 'block' } }}>Certificado</Typography>
+                        <Typography sx={{display: { xs: 'none', sm: 'block' } }}>{t("certificado")}</Typography>
                       </StyleButton>
                     </ListItem>
                   </List>
@@ -343,9 +363,9 @@ export default function Skills() {
                     <ListItem sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <Box>
                         <Typography sx={{ fontWeight: 'bold' }}>MEI:</Typography>
-                        <Typography sx={{ fontWeight: 'bold' }}>FREITULITOS, 2022-ATUALMENTE</Typography>
+                        <Typography sx={{ fontWeight: 'bold' }}>FREITULITOS, 2022-{t("atualmente")}</Typography>
                       </Box>
-                      <Button variant="outlined" onClick={handleClickOpen}>
+                      <Button variant="outlined" onClick={handleClickOpen} sx={{backgroundColor:"green", color:"white"}}>
                           SHOW MORE
                         </Button>
                         <Dialog
@@ -357,12 +377,11 @@ export default function Skills() {
 
                           <DialogContent>
                             <DialogContentText id="alert-dialog-description">
-                              Sou produtor e vendedor de cookies e alfajores artesanais. Minha função é preparar os doces com ingredientes de qualidade, garantindo sabor e frescor em cada unidade. Além de produzir, 
-                              também sou responsável pelas vendas e o marketing, oferecendo um atendimento personalizado e garantindo que cada cliente tenha a melhor experiência ao saborear meus produtos
+                              {t("showMei")}
                             </DialogContentText>
                           </DialogContent>
                           <DialogActions>
-                            <Button onClick={handleClose}>Fechar</Button>
+                            <Button onClick={handleClose}>{t("fechar")}</Button>
                           </DialogActions>
                         </Dialog>
                     </ListItem>
@@ -371,13 +390,29 @@ export default function Skills() {
                     
                     <ListItem sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <Box>
-                        <Typography sx={{ fontWeight: 'bold' }}>ESTAGIARIO:</Typography>
-                        <Typography sx={{ fontWeight: 'bold' }}>Secretaria de Desenvolvimento Econômico do Mato Grosso, 2023-ATUALMENTE</Typography>
+                        <Typography sx={{ fontWeight: 'bold' }}>{t("estagiario")}:</Typography>
+                        <Typography sx={{ fontWeight: 'bold' }}>Secretaria de Desenvolvimento Econômico do Mato Grosso, 2023-{t("atualmente")}</Typography>
                       </Box>
-                      <StyleButton onClick={useRedirect("https://drive.google.com/file/d/1DshIogGFTKftCdZLAeQqW3ayFexesLT6/view?usp=sharing")} width="13%" backgroundColor="green">
-                        <WorkspacePremiumIcon />
-                        <Typography sx={{display: { xs: 'none', sm: 'block' } }}>Certificado</Typography>
-                      </StyleButton>
+                    
+                      <Button variant="outlined" onClick={handleClickOpen} sx={{backgroundColor:"green", color:"white"}}>
+                          SHOW MORE
+                        </Button>
+                        <Dialog
+                          open={open}
+                          onClose={handleClose}
+                          aria-labelledby="alert-dialog-title"
+                          aria-describedby="alert-dialog-description"
+                        >
+
+                          <DialogContent>
+                            <DialogContentText id="alert-dialog-description">
+                              {t("showSedec")}
+                            </DialogContentText>
+                          </DialogContent>
+                          <DialogActions>
+                            <Button onClick={handleClose}>{t("fechar")}</Button>
+                          </DialogActions>
+                        </Dialog>
                     </ListItem>
                     <Divider component="li" />
 

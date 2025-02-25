@@ -1,5 +1,6 @@
 import { Box, Container, Grid2, Tabs, Typography, styled } from "@mui/material";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 function TabPanel(props: { children?: React.ReactNode; index: number; value: number }) {
   const { children, value, index, ...other } = props;
@@ -18,6 +19,7 @@ function TabPanel(props: { children?: React.ReactNode; index: number; value: num
 
 export default function About() {
   const [value, setValue] = React.useState(0);
+  const { t, i18n } = useTranslation();
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -105,7 +107,7 @@ export default function About() {
               transform: 'translateY(-50%)',
             },
           }}
-          >ABOUT ME</Typography>
+          >{t("sobreMim")}</Typography>
         <Grid2 container spacing={2} sx={{ position: 'relative' }}>
           <Box sx={{
             width: '100%',
@@ -142,8 +144,7 @@ export default function About() {
                     <Typography>
                         <StyleText>
 
-                            MY NAME IS LUCAS EDUARDO DE FREITAS, I AM FINALIZING THE COMPUTER SCIENCE COURSE AT THE FEDERAL UNIVERSITY OF MATO GROSSO (UFMT). I HAVE EXPERIENCE IN THE AREAS OF
-                            BACKEND AND FRONTEND DEVELOPMENT, DATA SCIENCE AND MACHINE LEARNING/AI
+                            {t("sobre")}
                         </StyleText>
                     </Typography>
                 </StyleTabPanel>

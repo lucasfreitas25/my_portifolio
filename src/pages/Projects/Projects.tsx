@@ -4,7 +4,9 @@ import ArchitectureIcon from '@mui/icons-material/Architecture';
 import CodeIcon from '@mui/icons-material/Code';
 import AddchartIcon from '@mui/icons-material/Addchart';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import ThreeDRotationIcon from '@mui/icons-material/ThreeDRotation';
 import useRedirect from "../../components/StyleButton/Buttons/Button_down";
+import { useTranslation } from "react-i18next";
 
 const itemDev = [
   {
@@ -149,7 +151,30 @@ const itemData = [
     author: ['logo python.png', 'logo postgres.png'],
   },
 ];
-
+const itemDesign = [
+  {
+    img: 'src\\assets\\images\\Camisa Preta Trojan.jpg',
+    title: 'CAMISA PRETA TROJAN',
+    rows: 2,
+    cols: 2,
+    featured: true,
+  },
+  {
+    img: 'src\\assets\\images\\Camisa Branca Trojan.jpeg',
+    title: 'CAMISA BRANCA TROJAN',
+    author: ['logo python.png', 'logo postgres.png'],
+  },
+  {
+    img: 'src\\assets\\images\\Camisa Azul Trojan.jpg',
+    title: 'CAMISA AZUL TROJAN',
+    cols: 2,
+  },
+  {
+    img: 'src\\assets\\images\\Camisa 2 Branca Trojan.jpeg',
+    title: 'CAMISA BRANCA 2 TROJAN',
+    cols: 2,
+  },
+]
 function TabPanel(props: { children?: React.ReactNode; index: number; value: number }) {
   const { children, value, index, ...other } = props;
 
@@ -174,10 +199,10 @@ function a11yProps(index: number) {
 export default function Projects() {
   const [value, setValue] = React.useState(0);
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
-
+  const {t} = useTranslation();
   // Estilos
   const StyleHero = styled("div")(({ theme }) => ({
     backgroundColor: "#0d0317",
@@ -256,7 +281,7 @@ export default function Projects() {
             color: 'white',
             alignItems: 'center',
             justifyContent: 'center',
-            fontSize: '2rem',
+            fontSize: {md:'2rem', xs:"1.5rem"},
             position: 'relative',
             overflow: 'hidden',
             fontWeight: 'bold',
@@ -264,7 +289,7 @@ export default function Projects() {
             '&::before': {
               content: '""',
               position: 'absolute',
-              width: {md:'30%', xs:0}, 
+              width: {md:'30%', xs:"8%"}, 
               height: '3px',
               background: 'white',
               top: '50%',
@@ -274,7 +299,7 @@ export default function Projects() {
             '&::after': {
               content: '""',
               position: 'absolute',
-              width: {md:'30%', xs:0}, 
+              width: {md:'30%', xs:"8%"}, 
               height: '3px',
               background: 'white',
               top: '50%',
@@ -283,7 +308,7 @@ export default function Projects() {
             },
           }}
           >
-        PROJECTS MANAGEMENT
+        {t("gestao")}
       </Typography>
         <Grid2 container spacing={2} sx={{ position: 'relative', }}>
           <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', height: 'auto', padding: 0 }}>
@@ -305,11 +330,18 @@ export default function Projects() {
                   alignItems: 'center',
                 }}
               >
-                <Tab icon={<CodeIcon />} label="DEV" {...a11yProps(0)} sx={{ 
-                    fontSize: '20px', 
-                    fontWeight: 'bold',  
-                    color: "white", 
-                    borderRadius: 2,
+                <Tab icon={<CodeIcon />} label="DEV"  {...a11yProps(0)} 
+                sx={{ 
+                  fontSize: '20px',
+                  fontWeight: 'bold',
+                  color: 'white',
+                  borderRadius: 2,
+                  transition: 'transform 0.3s ease, opacity 0.3s ease', // Suaviza a transformação e opacidade
+                  transform: value === 0 ? 'scale(1.05)' : 'scale(1)', // Efeito de escala para a tab selecionada
+                  opacity: value === 0 ? 1 : 0.7, // Opacidade para a tab selecionada
+                  '&:hover': {
+                    transform: 'scale(1.1)', // Aumenta a escala quando o mouse passa sobre a Tab
+                  },
                     "&.Mui-selected": { 
                     color: "black", 
                     backgroundColor: "white"
@@ -318,10 +350,16 @@ export default function Projects() {
                 /> 
                 <Tab icon={<AddchartIcon />} label="DATA SCIENCE" {...a11yProps(1)} 
                 sx={{ 
-                    fontSize: '20px', 
-                    fontWeight: 'bold',  
-                    color: "white", 
-                    borderRadius: 2,
+                  fontSize: '20px',
+                  fontWeight: 'bold',
+                  color: 'white',
+                  borderRadius: 2,
+                  transition: 'transform 0.3s ease, opacity 0.3s ease', // Suaviza a transformação e opacidade
+                  transform: value === 0 ? 'scale(1.05)' : 'scale(1)', // Efeito de escala para a tab selecionada
+                  opacity: value === 0 ? 1 : 0.7, // Opacidade para a tab selecionada
+                  '&:hover': {
+                    transform: 'scale(1.1)', // Aumenta a escala quando o mouse passa sobre a Tab
+                  },
                     "&.Mui-selected": { 
                     color: "black", 
                     backgroundColor: "white"
@@ -329,10 +367,16 @@ export default function Projects() {
                     }} /> 
                 <Tab icon={<ArchitectureIcon />} label="DESIGN" {...a11yProps(2)} 
                 sx={{ 
-                    fontSize: '20px', 
-                    fontWeight: 'bold',  
-                    color: "white", 
-                    borderRadius: 2,
+                  fontSize: '20px',
+                  fontWeight: 'bold',
+                  color: 'white',
+                  borderRadius: 2,
+                  transition: 'transform 0.3s ease, opacity 0.3s ease', // Suaviza a transformação e opacidade
+                  transform: value === 0 ? 'scale(1.05)' : 'scale(1)', // Efeito de escala para a tab selecionada
+                  opacity: value === 0 ? 1 : 0.7, // Opacidade para a tab selecionada
+                  '&:hover': {
+                    transform: 'scale(1.1)', // Aumenta a escala quando o mouse passa sobre a Tab
+                  },
                     "&.Mui-selected": { 
                     color: "black", 
                     backgroundColor: "white"
@@ -400,6 +444,43 @@ export default function Projects() {
                               aria-label={`info about ${item.title}`}
                             >
                               <HelpOutlineIcon sx={{height:{xs:"15px", sm:"30px"}}}></HelpOutlineIcon>
+                            </IconButton>
+                          
+                          }
+                          sx={{    
+                            height: { xs: '40px', sm: 'auto' },
+                            padding: '4px'}}
+                        />
+                      </StyleImageListItem>
+                    </ImageListItem>
+                  ))}
+                </ImageList>
+              </TabPanel>
+              <TabPanel value={value} index={2}>
+                <ImageList sx={{ width: "100%", height: 450, rowHeight: 180 }}>
+                  <ImageListItem key="Subheader" cols={2}>
+                    <ListSubheader component="div"></ListSubheader>
+                  </ImageListItem>
+                  {itemDesign.map((item) => (
+                    <ImageListItem key={item.img} sx={{ width: "100%", height: 180 }}>
+                      
+                      <StyleImageListItem>
+                        <img
+                          srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                          src={`${item.img}?w=248&fit=crop&auto=format`}
+                          alt={item.title}
+                          loading="lazy"
+                          style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                        />
+                        <ImageListItemBar
+                          title={<Typography sx={{ fontSize: { xs: '8px', md: '20px' }, fontWeight: 'bold'}}>{item.title}</Typography>}
+                  
+                          actionIcon={
+                            <IconButton
+                              sx={{ color: 'rgb(255, 255, 255)' }}
+                              aria-label={`info about ${item.title}`}
+                            >
+                              <ThreeDRotationIcon sx={{height:{xs:"15px", sm:"30px"}}}></ThreeDRotationIcon>
                             </IconButton>
                           
                           }
