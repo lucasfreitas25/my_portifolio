@@ -1,12 +1,14 @@
-import { Box, Button, Container, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, Grid2, List, ListItem, Tab, Tabs, Typography, styled } from "@mui/material";
+import { Box, Button, Container, Dialog, DialogActions, DialogContent, DialogContentText, Divider, Grid2, List, ListItem, Tab, Tabs, Typography, styled } from "@mui/material";
 import React from "react";
 import StyleButton from "../../../components/StyleButton/StyleButton";
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
-import useRedirect from "../../../components/StyleButton/Buttons/Button_down";
+import useRedirect from "../../../components/Buttons/Button_down";
 import { useTranslation } from "react-i18next";
+
+
 
 const logo_back = [
   'logo_C.png',
@@ -50,10 +52,12 @@ function a11yProps(index: number) {
 export default function Skills() {
   const [value, setValue] = React.useState(0);
   
-  const { t, i18n } = useTranslation();
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const { t } = useTranslation();
+  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+
+
 
   // Estilos
   const StyleHero = styled("div")(({ theme }) => ({

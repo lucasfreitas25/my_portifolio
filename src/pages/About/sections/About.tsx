@@ -19,9 +19,9 @@ function TabPanel(props: { children?: React.ReactNode; index: number; value: num
 
 export default function About() {
   const [value, setValue] = React.useState(0);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 

@@ -25,7 +25,7 @@ const resources = {
   pt: {
     translation: {
       inicio: "Sou Desenvolvedor de Software e Cientista de Dados",
-      curiculo: "Download Curriculo",
+      curiculo: "Download CV",
       contato: "Meu contato",
       sobre: "MEU NOME É LUCAS EDUARDO DE FREITAS, ESTOU FINALIZANDO O CURSO DE CIÊNCIA DA COMPUTAÇÃO NA UNIVERSIDADE FEDERAL DE MATO GROSSO (UFMT). POSSUO EXPERIÊNCIA NAS ÁREAS DE DESENVOLVIMENTO BACKEND E FRONTEND, CIÊNCIA DE DADOS E MACHINE LEARNING/IA",
       showMei: "Sou produtor e vendedor de cookies e alfajores artesanais. Minha função é preparar os doces com ingredientes de qualidade, garantindo sabor e frescor em cada unidade. Além de produzir, também sou responsável pelas vendas e o marketing, oferecendo um atendimento personalizado e garantindo que cada cliente tenha a melhor experiência ao saborear meus produtos",

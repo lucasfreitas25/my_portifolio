@@ -3,10 +3,14 @@ import React from "react";
 import ArchitectureIcon from '@mui/icons-material/Architecture';
 import CodeIcon from '@mui/icons-material/Code';
 import AddchartIcon from '@mui/icons-material/Addchart';
-import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import ThreeDRotationIcon from '@mui/icons-material/ThreeDRotation';
-import useRedirect from "../../components/StyleButton/Buttons/Button_down";
+import GitHubIcon from '@mui/icons-material/GitHub';
+import useRedirect from "../../components/Buttons/Button_down";
 import { useTranslation } from "react-i18next";
+import Camisa3D from "../../components/Models3D/model3d";
+
+
+
 
 const itemDev = [
   {
@@ -203,6 +207,8 @@ export default function Projects() {
     setValue(newValue);
   };
   const {t} = useTranslation();
+  
+  
   // Estilos
   const StyleHero = styled("div")(({ theme }) => ({
     backgroundColor: "#0d0317",
@@ -371,11 +377,11 @@ export default function Projects() {
                   fontWeight: 'bold',
                   color: 'white',
                   borderRadius: 2,
-                  transition: 'transform 0.3s ease, opacity 0.3s ease', // Suaviza a transformação e opacidade
-                  transform: value === 0 ? 'scale(1.05)' : 'scale(1)', // Efeito de escala para a tab selecionada
-                  opacity: value === 0 ? 1 : 0.7, // Opacidade para a tab selecionada
+                  transition: 'transform 0.3s ease, opacity 0.3s ease', 
+                  transform: value === 0 ? 'scale(1.05)' : 'scale(1)', 
+                  opacity: value === 0 ? 1 : 0.7, 
                   '&:hover': {
-                    transform: 'scale(1.1)', // Aumenta a escala quando o mouse passa sobre a Tab
+                    transform: 'scale(1.1)', 
                   },
                     "&.Mui-selected": { 
                     color: "black", 
@@ -405,8 +411,8 @@ export default function Projects() {
                         title={<Typography sx={{ fontSize: { xs: '10px', sm: '20px' }, fontWeight: 'bold' }}>{item.title}</Typography>}
                         subtitle={<LogoGallery logos={item.author} />}
                         actionIcon={
-                          <IconButton onClick={useRedirect(item.local)} sx={{ color: 'rgb(255, 255, 255)' , }} aria-label={`info about ${item.title}`}>
-                            <HelpOutlineIcon sx={{height:{xs:"15px", sm:"30px"}}}></HelpOutlineIcon>
+                          <IconButton onClick={useRedirect(item.local)}  sx={{ color: 'rgb(255, 255, 255)' , }} aria-label={`info about ${item.title}`}>
+                            <GitHubIcon sx={{height:{xs:"15px", sm:"30px"}}}></GitHubIcon>
                           </IconButton>
                         }
                         sx={{    
@@ -443,7 +449,7 @@ export default function Projects() {
                               sx={{ color: 'rgb(255, 255, 255)' }}
                               aria-label={`info about ${item.title}`}
                             >
-                              <HelpOutlineIcon sx={{height:{xs:"15px", sm:"30px"}}}></HelpOutlineIcon>
+                              <GitHubIcon sx={{height:{xs:"15px", sm:"30px"}}}></GitHubIcon>
                             </IconButton>
                           
                           }
@@ -477,10 +483,12 @@ export default function Projects() {
                   
                           actionIcon={
                             <IconButton
+                              
                               sx={{ color: 'rgb(255, 255, 255)' }}
                               aria-label={`info about ${item.title}`}
                             >
                               <ThreeDRotationIcon sx={{height:{xs:"15px", sm:"30px"}}}></ThreeDRotationIcon>
+                              
                             </IconButton>
                           
                           }

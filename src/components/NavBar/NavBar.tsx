@@ -18,6 +18,7 @@ const NavBar = () => {
     alignItems: "center",  
     width: "100%",  
     flexWrap: "wrap", 
+    position: 'fixed',
   }));
 
   return (

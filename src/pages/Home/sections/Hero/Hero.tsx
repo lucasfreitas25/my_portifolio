@@ -3,10 +3,10 @@ import Avatar from "../../../../assets/images/avatar.png"
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import ContactPageIcon from '@mui/icons-material/ContactPage';
 import StyleButton from "../../../../components/StyleButton/StyleButton";
-import { AnimatedBackground } from "../../../../components/StyleButton/AnimatedBackgroud/AnimatedBackgroud";
+import { AnimatedBackground } from "../../../../components/AnimatedBackgroud/AnimatedBackgroud";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import useRedirect from "../../../../components/StyleButton/Buttons/Button_down";
+import useRedirect from "../../../../components/Buttons/Button_down";
 import { useTranslation } from "react-i18next";
 
 
@@ -16,7 +16,8 @@ const Hero = () => {
   const redirectToLinkedin= useRedirect("https://br.linkedin.com/in/lucasfreitas-tech");
   const redirectToGithub= useRedirect("https://github.com/lucasfreitas25");
   const redirectToCurriculo= useRedirect("https://drive.google.com/file/d/12PdZCSu8i_mPxgEiieT7bx-qhl91SO4V/view?usp=sharing");
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
+
   const StyleHero = styled("div")(({theme}) => ( {
     backgroundColor: `#0d0317`,
     height: "100vh",
@@ -51,11 +52,11 @@ const Hero = () => {
     return (
       <>
         <StyleHero>
-          <Container maxWidth="lg">
+          <Container maxWidth="lg" >
             <Grid2 container spacing={2}>
-              <Grid2 size={{ xs: 12, md: 5 }}>
+              <Grid2 size={{ xs: 12, md: 5 }} >
                 <Box position="relative">
-                  <Box position="absolute" width={"150%"} top={-100} right={0}>
+                  <Box position="absolute" width={"150%"} top={-100} right={0} >
                     <AnimatedBackground></AnimatedBackground>
                   </Box>
                   <Box position={"relative"} textAlign={"center"}>
@@ -65,19 +66,22 @@ const Hero = () => {
               </Grid2>
               <Grid2 size={{ xs: 12, md: 7 }}>
                 <StyleText>
-                  <Typography 
+                <Typography 
                     color="primary.contrastText" 
                     variant="h1" 
                     textAlign="center" 
                     pb={2}
+                    sx={{ fontSize: { xs: '2rem', md: '4.5rem' } }} 
                   >
                     Lucas Freitas
                   </Typography>
+
                   <Typography 
                     color="primary.contrastText" 
                     variant="h2" 
                     textAlign={"center"} 
                     pb={2}
+                    sx={{ fontSize: { xs: '2rem', md: '3rem' } }} 
                   >
                     {t("inicio")}
                   </Typography>

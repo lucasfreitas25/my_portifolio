@@ -1,8 +1,6 @@
-
 const useRedirect = (url) => {
-  // Redireciona para a URL fornecida
   const redirectTo = () => {
-    window.location.href = url;
+    window.open(url, "_blank"); 
   };
 
   return redirectTo;
