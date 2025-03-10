@@ -10,16 +10,19 @@ import { useTranslation } from "react-i18next";
 import LogoCSS from '../../../assets/images/logo CSS.png';
 import LogoHTML from '../../../assets/images/logo HTML.png';
 import LogoJava from '../../../assets/images/logo Java.png';
-import LogoJs from '../../../assets/images/logo js.svg';
+import LogoJs from '../../../assets/images/logo_js.svg';
 import LogoMysql from '../../../assets/images/logo mysql.png';
 import LogoNode from '../../../assets/images/logo node.png';
 import LogoPostgres from '../../../assets/images/logo postgres.png';
 import LogoPowerbi from '../../../assets/images/logo powerbi.png';
-import LogoPython from '../../../assets/images/logo python.png';
+import LogoPython from '../../../assets/images/logo_python.png';
 import LogoReact from '../../../assets/images/logo react.png';
-// import LogoSqlite from '../../../assets/images/logo sqlite.png';
+import LogoSqlite from '../../../assets/images/logo sqllite.png';
 import LogoC from '../../../assets/images/logo_C.png';
-
+// import images from '../../../assets/images/indes';
+// const logo_back = [images.LogoC, images.LogoJava, images.LogoNode, images.LogoPython];
+// const logo_front = [images.LogoCSS, images.LogoHTML, images.LogoJs, images.LogoReact, images.LogoPowerbi];
+// const logo_bd = [images.LogoMysql, images.LogoPostgres, images.LogoSqlite];
 
 const logo_back = [
   LogoC,
@@ -37,7 +40,7 @@ const logo_front = [
 const logo_bd = [
   LogoMysql,
   LogoPostgres,
-  // LogoSqlite
+  LogoSqlite
 ];
 
 function TabPanel(props: { children?: React.ReactNode; index: number; value: number }) {
@@ -110,7 +113,7 @@ export default function Skills() {
       <Box sx={{ display: 'flex', flexDirection: 'row', gap: {xs: '25px', sm: '15px'}, flexWrap: 'wrap', justifyContent: 'center', marginLeft:"25px" }}>
         {logos.map((logo, index) => (
           <Box key={index} sx={{gap:"5px"}}> 
-            <StyleImg src={`src/assets/images/${logo}`} alt={`Logo ${index + 1}`} />
+            <StyleImg src={`${logo}`} alt={`Logo ${index + 1}`} />
           </Box>
         ))}
       </Box>

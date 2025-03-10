@@ -52,69 +52,71 @@ const Hero = () => {
     return (
       <>
         <StyleHero>
-          <Container maxWidth="lg" >
-            <Grid2 container spacing={2}>
-              <Grid2 size={{ xs: 12, md: 5 }} >
-                <Box position="relative">
-                  <Box position="absolute" width={"150%"} top={-100} right={0} >
-                    <AnimatedBackground></AnimatedBackground>
+          
+            <Container maxWidth="lg" >
+              <Grid2 container spacing={2}>
+                <Grid2 size={{ xs: 12, md: 5 }} >
+                  <Box position="relative">
+                    <Box position="absolute" width={"150%"} top={-100} right={0} >
+                      <AnimatedBackground></AnimatedBackground>
+                    </Box>
+                    <Box position={"relative"} textAlign={"center"}>
+                      <StyleImg src={Avatar}></StyleImg>
+                    </Box>
                   </Box>
-                  <Box position={"relative"} textAlign={"center"}>
-                    <StyleImg src={Avatar}></StyleImg>
-                  </Box>
-                </Box>
-              </Grid2>
-              <Grid2 size={{ xs: 12, md: 7 }}>
-                <StyleText>
-                <Typography 
-                    color="primary.contrastText" 
-                    variant="h1" 
-                    textAlign="center" 
-                    pb={2}
-                    sx={{ fontSize: { xs: '2rem', md: '4.5rem' } }} 
-                  >
-                    Lucas Freitas
-                  </Typography>
-
-                  <Typography 
-                    color="primary.contrastText" 
-                    variant="h2" 
-                    textAlign={"center"} 
-                    pb={2}
-                    sx={{ fontSize: { xs: '2rem', md: '3rem' } }} 
-                  >
-                    {t("inicio")}
-                  </Typography>
-                </StyleText>
-                <Grid2 container display={"flex"} justifyContent={"center"} spacing={3}>
-                  <Grid2 size={{ xs: 12, md: 4 }} display={"flex"} justifyContent={"center"}>
-                    <StyleButton onClick={(redirectToCurriculo)}>
-                      <CloudDownloadIcon></CloudDownloadIcon>
-                      <Typography>{t("curiculo")}</Typography>
-                    </StyleButton>
-                  </Grid2>
-                  <Grid2 size={{ xs: 12, md: 4 }} display={"flex"} justifyContent={"center"}>
-                    <StyleButton onClick={(redirectToWhatsApp)}>
-                      <ContactPageIcon></ContactPageIcon>
-                      <Typography>{t("contato")}</Typography>
-                    </StyleButton>
-                  </Grid2>
                 </Grid2>
-                <Grid2 container display={"flex"} justifyContent={"center"} spacing={3} paddingTop={3}>
-                  <Grid2 size={{ xs: 12, md: 4 }} display={"inline-flex"} justifyContent={"center"}>
-                      <IconButton onClick={(redirectToLinkedin)} sx={{ color: 'rgb(255, 255, 255)' }}>
-                        <LinkedInIcon></LinkedInIcon>
-                      </IconButton>
+                <Grid2 size={{ xs: 12, md: 7 }}>
+                  <StyleText>
+                  <Typography 
+                      color="primary.contrastText" 
+                      variant="h1" 
+                      textAlign="center" 
+                      pb={2}
+                      sx={{ fontSize: { xs: '2rem', md: '4.5rem' } }} 
+                    >
+                      Lucas Freitas
+                    </Typography>
+
+                    <Typography 
+                      color="primary.contrastText" 
+                      variant="h2" 
+                      textAlign={"center"} 
+                      pb={2}
+                      sx={{ fontSize: { xs: '2rem', md: '3rem' } }} 
+                    >
+                      {t("inicio")}
+                    </Typography>
+                  </StyleText>
+                  <Grid2 container display={"flex"} justifyContent={"center"} spacing={3}>
+                    <Grid2 size={{ xs: 12, md: 4 }} display={"flex"} justifyContent={"center"}>
+                      <StyleButton onClick={(redirectToCurriculo)}>
+                        <CloudDownloadIcon></CloudDownloadIcon>
+                        <Typography>{t("curiculo")}</Typography>
+                      </StyleButton>
                     </Grid2>
-                    <Grid2 size={{ xs: 12, md: 4 }} display={"inline-flex"} justifyContent={"center"}>
-                      <IconButton onClick={(redirectToGithub)} sx={{ color: 'rgb(255, 255, 255)' }}>
-                        <GitHubIcon></GitHubIcon>
-                      </IconButton>
+                    <Grid2 size={{ xs: 12, md: 4 }} display={"flex"} justifyContent={"center"}>
+                      <StyleButton onClick={(redirectToWhatsApp)}>
+                        <ContactPageIcon></ContactPageIcon>
+                        <Typography>{t("contato")}</Typography>
+                      </StyleButton>
                     </Grid2>
                   </Grid2>
+                  <Grid2 container display={"flex"} justifyContent={"center"} spacing={3} paddingTop={3}>
+                    <Grid2 size={{ xs: 12, md: 4 }} display={"inline-flex"} justifyContent={"center"}>
+                        <IconButton onClick={(redirectToLinkedin)} sx={{ color: 'rgb(255, 255, 255)' }}>
+                          <LinkedInIcon></LinkedInIcon>
+                        </IconButton>
+                      </Grid2>
+                      <Grid2 size={{ xs: 12, md: 4 }} display={"inline-flex"} justifyContent={"center"}>
+                        <IconButton onClick={(redirectToGithub)} sx={{ color: 'rgb(255, 255, 255)' }}>
+                          <GitHubIcon></GitHubIcon>
+                        </IconButton>
+                      </Grid2>
+                    </Grid2>
+                </Grid2>
               </Grid2>
-            </Grid2>
-          </Container>
+            </Container>
+          
         </StyleHero>
       </>
     );

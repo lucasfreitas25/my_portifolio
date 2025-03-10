@@ -13,6 +13,7 @@ const App = () => {
       <Home></Home>
       <Skout></Skout>
       <Projects></Projects>
+     
     </>
   )
 }

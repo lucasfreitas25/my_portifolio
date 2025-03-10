@@ -22,17 +22,17 @@ import LinktreeFreitulitos from '../../assets/images/linktree freitulitos.png';
 import LogoCSS from '../../assets/images/logo CSS.png';
 import LogoHTML from '../../assets/images/logo HTML.png';
 import LogoJava from '../../assets/images/logo Java.png';
-import LogoJs from '../../assets/images/logo js.svg';
+import LogoJs from '../../assets/images/logo_js.svg';
 import LogoNode from '../../assets/images/logo node.png';
 import LogoPostgres from '../../assets/images/logo postgres.png';
 import LogoPowerbi from '../../assets/images/logo powerbi.png';
-import LogoPython from '../../assets/images/logo python.png';
+import LogoPython from '../../assets/images/logo_python.png';
 import LogoReact from '../../assets/images/logo react.png';
 import PainelAbates from '../../assets/images/painel abates.png';
 import PainelPnad from '../../assets/images/painel pnad.png';
 import PainelAnp from '../../assets/images/painel anp.png';
 import PainelConab from '../../assets/images/painel conab.png';
-import PainelEstoques from '../../assets/images/painel estoques.png';
+import PainelEstoques from '../../assets/images/painel_estoques.png';
 import PainelPam from '../../assets/images/painel pam.png';
 import PainelPevs from '../../assets/images/painel pevs.png';
 import PainelPibMunicipal from '../../assets/images/painel pib municipal.png';
@@ -285,7 +285,7 @@ export default function Projects() {
             }}
           >
             <StyleImg 
-              src={`assets/images/${logo}`} 
+              src={`${logo}`} 
               alt={`Logo ${index + 1}`} 
               sx={{ width: { xs: "12px", sm: "30px" }, height: "auto" }} 
             />
