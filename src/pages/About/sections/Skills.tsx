@@ -7,26 +7,37 @@ import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 import useRedirect from "../../../components/Buttons/Button_down";
 import { useTranslation } from "react-i18next";
-
+import LogoCSS from '../../../assets/images/logo CSS.png';
+import LogoHTML from '../../../assets/images/logo HTML.png';
+import LogoJava from '../../../assets/images/logo Java.png';
+import LogoJs from '../../../assets/images/logo js.svg';
+import LogoMysql from '../../../assets/images/logo mysql.png';
+import LogoNode from '../../../assets/images/logo node.png';
+import LogoPostgres from '../../../assets/images/logo postgres.png';
+import LogoPowerbi from '../../../assets/images/logo powerbi.png';
+import LogoPython from '../../../assets/images/logo python.png';
+import LogoReact from '../../../assets/images/logo react.png';
+// import LogoSqlite from '../../../assets/images/logo sqlite.png';
+import LogoC from '../../../assets/images/logo_C.png';
 
 
 const logo_back = [
-  'logo_C.png',
-  'logo Java.png',
-  'logo node.png',
-  'logo python.png'
+  LogoC,
+  LogoJava,
+  LogoNode,
+  LogoPython
 ];
 const logo_front = [
-  'logo CSS.png',
-  'logo HTML.png',
-  'logo js.svg',
-  'logo react.png',
-  'logo powerbi.png'
+  LogoCSS,
+  LogoHTML,
+  LogoJs,
+  LogoReact,
+  LogoPowerbi
 ];
 const logo_bd = [
-  'logo mysql.png',
-  'logo postgres.png',
-  'logo sqllite.png'
+  LogoMysql,
+  LogoPostgres,
+  // LogoSqlite
 ];
 
 function TabPanel(props: { children?: React.ReactNode; index: number; value: number }) {

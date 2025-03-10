@@ -1,4 +1,4 @@
-const useRedirect = (url) => {
+const useRedirect = (url: string | URL | undefined) => {
   const redirectTo = () => {
     window.open(url, "_blank"); 
   };

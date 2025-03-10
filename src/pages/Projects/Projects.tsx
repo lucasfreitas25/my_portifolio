@@ -7,63 +7,97 @@ import ThreeDRotationIcon from '@mui/icons-material/ThreeDRotation';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import useRedirect from "../../components/Buttons/Button_down";
 import { useTranslation } from "react-i18next";
-import Camisa3D from "../../components/Models3D/model3d";
 
+import Appfreitulitos from '../../assets/images/APP freitulitos.jpg';
+import Camisa2BrancaTrojan from '../../assets/images/Camisa 2 Branca Trojan.jpeg';
+import CamisaAzulTrojan from '../../assets/images/Camisa Azul Trojan.jpg';
+import CamisaBrancaTrojan from '../../assets/images/Camisa Branca Trojan.jpeg';
+import CamisaPretaTrojan from '../../assets/images/Camisa Preta Trojan.jpg';
+import ContadorDeTags from '../../assets/images/contador de tags.jpg';
+import Crud from '../../assets/images/crud.png';
+import FirstapiTest from '../../assets/images/firstapi test.png';
+import IACalvo from '../../assets/images/IA CALVO.png';
+import ImagemPortfolio from '../../assets/images/imagem portfolio.png';
+import LinktreeFreitulitos from '../../assets/images/linktree freitulitos.png';
+import LogoCSS from '../../assets/images/logo CSS.png';
+import LogoHTML from '../../assets/images/logo HTML.png';
+import LogoJava from '../../assets/images/logo Java.png';
+import LogoJs from '../../assets/images/logo js.svg';
+import LogoNode from '../../assets/images/logo node.png';
+import LogoPostgres from '../../assets/images/logo postgres.png';
+import LogoPowerbi from '../../assets/images/logo powerbi.png';
+import LogoPython from '../../assets/images/logo python.png';
+import LogoReact from '../../assets/images/logo react.png';
+import PainelAbates from '../../assets/images/painel abates.png';
+import PainelPnad from '../../assets/images/painel pnad.png';
+import PainelAnp from '../../assets/images/painel anp.png';
+import PainelConab from '../../assets/images/painel conab.png';
+import PainelEstoques from '../../assets/images/painel estoques.png';
+import PainelPam from '../../assets/images/painel pam.png';
+import PainelPevs from '../../assets/images/painel pevs.png';
+import PainelPibMunicipal from '../../assets/images/painel pib municipal.png';
+import PainelPpm from '../../assets/images/painel ppm.png';
+import PainelPms from '../../assets/images/painel pms.png';
+import PainelPim from '../../assets/images/painel pim.png';
+import PainelUsda from '../../assets/images/painel usda.png';
+import SistemaInteligente from '../../assets/images/Sistema inteligente.png';
+import SiteTrojan from '../../assets/images/site trojan.png';
+// import Camisa3D from "../../components/Models3D/model3d";
 
 
 
 const itemDev = [
   {
-    img: 'src\\assets\\images\\imagem portfolio.png',
+    img: ImagemPortfolio,
     title: 'Portfólio',
-    author: ['logo js.svg', 'logo react.png'],
+    author: [LogoJs, LogoReact],
     local: 'https://github.com/lucasfreitas25/my_portifolio'
   },
   {
-    img: 'src\\assets\\images\\crud .png',
+    img: Crud,
     title: 'CRUD',
-    author: ['logo Java.png', 'logo postgres.png'],
+    author: [LogoJava, LogoPostgres, LogoPowerbi],
     rows: 2,
     cols: 2,
     featured: true,
     local:'https://github.com/lucasfreitas25/Trabalho-CRUD'
   },
   {
-    img: 'src\\assets\\images\\Sistema inteligente.png',
+    img: SistemaInteligente,
     title: 'SISTEMA INTELIGENTE FREITULITOS',
-    author: ['logo python.png', 'logo postgres.png'],
+    author: [LogoPython, LogoPostgres, LogoPowerbi],
     local: 'https://github.com/lucasfreitas25/IA_sistema_inteligente'
   },
   {
-    img: 'src\\assets\\images\\linktree freitulitos.png',
+    img: LinktreeFreitulitos,
     title: 'LinkTree Custom',
-    author: ['logo js.svg', "logo CSS.png", "logo HTML.png"],
+    author: [LogoJs, LogoCSS, LogoHTML],
     cols: 2,
     local:'https://github.com/lucasfreitas25/Projeto-Frontend'
   },
   {
-    img: 'src\\assets\\images\\site trojan.png',
+    img: SiteTrojan,
     title: 'SITE TROJAN',
-    author: ['logo js.svg', "logo CSS.png", "logo HTML.png"],
+    author: [LogoJs, LogoCSS, LogoHTML],
     local:"https://github.com/lucasfreitas25/Site-TROJAN"
   },
   {
-    img: 'src\\assets\\images\\contador de tags.PNG',
+    img: ContadorDeTags,
     title: 'Contador de TAGS',
-    author: ['logo node.png', 'logo postgres.png'],
+    author: [LogoNode, LogoPostgres, LogoPowerbi],
     local: 'https://github.com/lucasfreitas25/TestePratico_NUTI'
   },
   {
-    img: 'src\\assets\\images\\APP freitulitos.jpg',
+    img: Appfreitulitos,
     title: 'FreitulitosAPP',
-    author: ['logo js.svg', "logo CSS.png", "logo HTML.png"],
+    author: [LogoJs, LogoCSS, LogoHTML],
     cols: 2,
     local:'https://github.com/lucasfreitas25/FreitulitosAPP'
   },
   {
-    img: 'src\\assets\\images\\firstapi test.png',
+    img: FirstapiTest,
     title: 'FirstAPI',
-    author: ['logo python.png'],
+    author: [LogoPython],
     rows: 2,
     cols: 2,
     featured: true,
@@ -73,108 +107,107 @@ const itemDev = [
 
 const itemData = [
   {
-    img: 'src\\assets\\images\\painel pnad.png',
+    img: PainelPnad,
     title: 'PNAD',
-    author: ['logo python.png', 'logo postgres.png'],
+    author: [LogoPython, LogoPostgres, LogoPowerbi],
     rows: 2,
     cols: 2,
     featured: true,
   },
   {
-    img: 'src\\assets\\images\\IA Calvo.png',
+    img: IACalvo,
     title: 'IA CALVO',
-    author: ['logo python.png', 'logo postgres.png'],
+    author: [LogoPython, LogoPostgres, LogoPowerbi],
   },
   {
-    img: 'src\\assets\\images\\painel pam.png',
+    img: PainelPam,
     title: 'PAM',
-    author: ['logo python.png', 'logo postgres.png'],
+    author: [LogoPython, LogoPostgres, LogoPowerbi],
     cols: 2,
   },
   {
-    img: 'src\\assets\\images\\painel pevs.png',
+    img: PainelPevs,
     title: 'PEVS',
-    author: ['logo python.png', 'logo postgres.png'],
+    author: [LogoPython, LogoPostgres, LogoPowerbi],
     cols: 2,
   },
   {
-    img: 'src\\assets\\images\\painel ppm.png',
+    img: PainelPpm,
     title: 'PPM',
-    author: ['logo python.png', 'logo postgres.png'],
+    author: [LogoPython, LogoPostgres, LogoPowerbi],
     rows: 2,
     cols: 2,
     featured: true,
   },
   {
-    img: 'src\\assets\\images\\painel conab.png',
+    img: PainelConab,
     title: 'CONAB',
-    author: ['logo python.png', 'logo postgres.png'],
+    author: [LogoPython, LogoPostgres, LogoPowerbi],
   },
   {
-    img: 'src\\assets\\images\\painel anp.png',
+    img: PainelAnp,
     title: 'ANP',
-    author: ['logo python.png', 'logo postgres.png'],
+    author: [LogoPython, LogoPostgres, LogoPowerbi],
   },
   {
-    img: 'src\\assets\\images\\painel pib municipal.png',
+    img: PainelPibMunicipal,
     title: 'PIB MUNICIPAL',
-    author: ['logo python.png', 'logo postgres.png'],
+    author: [LogoPython, LogoPostgres, LogoPowerbi],
   },
   {
-    img: 'src\\assets\\images\\painel abates.png',
+    img: PainelAbates,
     title: 'ABATE ANIMAIS',
-    author: ['logo python.png', 'logo postgres.png'],
+    author: [LogoPython, LogoPostgres, LogoPowerbi],
     rows: 2,
     cols: 2,
   },
   {
-    img: 'src\\assets\\images\\painel estoques.png',
+    img: PainelEstoques,
     title: 'ESTOQUES',
-    author: ['logo python.png', 'logo postgres.png'],
+    author: [LogoPython, LogoPostgres, LogoPowerbi],
     rows: 2,
     cols: 2,
   },
   {
-    img: 'src\\assets\\images\\painel pim.png',
+    img: PainelPim,
     title: 'PIM',
-    author: ['logo python.png', 'logo postgres.png'],
+    author: [LogoPython, LogoPostgres, LogoPowerbi],
   },
   {
-    img: 'src\\assets\\images\\painel pms.png',
+    img: PainelPms,
     title: 'PMS',
-    author: ['logo python.png', 'logo postgres.png'],
+    author: [LogoPython, LogoPostgres, LogoPowerbi],
   },
   {
-    img: 'src\\assets\\images\\painel usda.png',
+    img: PainelUsda,
     title: 'USDA',
-    author: ['logo python.png', 'logo postgres.png'],
+    author: [LogoPython, LogoPostgres, LogoPowerbi],
   },
   {
     img: 'src\\assets\\images\\painel ptl.png',
     title: 'PTL',
-    author: ['logo python.png', 'logo postgres.png'],
+    author: [LogoPython, LogoPostgres, LogoPowerbi],
   },
 ];
 const itemDesign = [
   {
-    img: 'src\\assets\\images\\Camisa Preta Trojan.jpg',
+    img: CamisaPretaTrojan,
     title: 'CAMISA PRETA TROJAN',
     rows: 2,
     cols: 2,
     featured: true,
   },
   {
-    img: 'src\\assets\\images\\Camisa Branca Trojan.jpeg',
+    img: CamisaBrancaTrojan,
     title: 'CAMISA BRANCA TROJAN',
-    author: ['logo python.png', 'logo postgres.png'],
   },
   {
-    img: 'src\\assets\\images\\Camisa Azul Trojan.jpg',
+    img: CamisaAzulTrojan,
     title: 'CAMISA AZUL TROJAN',
     cols: 2,
   },
   {
-    img: 'src\\assets\\images\\Camisa 2 Branca Trojan.jpeg',
+    img: Camisa2BrancaTrojan,
     title: 'CAMISA BRANCA 2 TROJAN',
     cols: 2,
   },
@@ -252,7 +285,7 @@ export default function Projects() {
             }}
           >
             <StyleImg 
-              src={`src/assets/images/${logo}`} 
+              src={`assets/images/${logo}`} 
               alt={`Logo ${index + 1}`} 
               sx={{ width: { xs: "12px", sm: "30px" }, height: "auto" }} 
             />
@@ -399,8 +432,8 @@ export default function Projects() {
                     <ImageListItem key={item.img} sx={{ width: "100%", height: 180 }}>
                       <StyleImageListItem>
                         <img
-                          srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                          src={`${item.img}?w=248&fit=crop&auto=format`}
+                          srcSet={`${item.img}`}
+                          src={`${item.img}`}
                           alt={item.title}
                           loading="lazy"
                           
@@ -435,8 +468,8 @@ export default function Projects() {
                       
                       <StyleImageListItem>
                         <img
-                          srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                          src={`${item.img}?w=248&fit=crop&auto=format`}
+                          srcSet={`${item.img}`}
+                          src={`${item.img}`}
                           alt={item.title}
                           loading="lazy"
                           style={{ width: "100%", height: "100%", objectFit: "contain" }}
@@ -472,8 +505,8 @@ export default function Projects() {
                       
                       <StyleImageListItem>
                         <img
-                          srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                          src={`${item.img}?w=248&fit=crop&auto=format`}
+                          srcSet={`${item.img}`}
+                          src={`${item.img}`}
                           alt={item.title}
                           loading="lazy"
                           style={{ width: "100%", height: "100%", objectFit: "contain" }}
