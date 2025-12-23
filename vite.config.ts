@@ -3,5 +3,8 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/my_portifolio/' 
+  base: "/",
+  build: {
+    target: 'esnext', // ou 'es2015', dependendo da compatibilidade que você deseja
+  },
 })

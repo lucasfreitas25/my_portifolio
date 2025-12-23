@@ -15,7 +15,7 @@ const Hero = () => {
   const redirectToWhatsApp = useRedirect("https://wa.me/5565996474929");
   const redirectToLinkedin= useRedirect("https://br.linkedin.com/in/lucasfreitas-tech");
   const redirectToGithub= useRedirect("https://github.com/lucasfreitas25");
-  const redirectToCurriculo= useRedirect("https://drive.google.com/file/d/12PdZCSu8i_mPxgEiieT7bx-qhl91SO4V/view?usp=sharing");
+  const redirectToCurriculo= useRedirect("https://drive.google.com/file/d/1kzbVYKck75r_tHHtQvTq6uBxgrvNZ1NR/view?usp=sharing");
   const { t } = useTranslation();
 
   const StyleHero = styled("div")(({theme}) => ( {

@@ -3,7 +3,7 @@ import React from "react";
 import ArchitectureIcon from '@mui/icons-material/Architecture';
 import CodeIcon from '@mui/icons-material/Code';
 import AddchartIcon from '@mui/icons-material/Addchart';
-import ThreeDRotationIcon from '@mui/icons-material/ThreeDRotation';
+import LanguageIcon from '@mui/icons-material/Language';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import useRedirect from "../../components/Buttons/Button_down";
 import { useTranslation } from "react-i18next";
@@ -20,6 +20,7 @@ import IACalvo from '../../assets/images/IA CALVO.png';
 import ImagemPortfolio from '../../assets/images/imagem portfolio.png';
 import LinktreeFreitulitos from '../../assets/images/linktree freitulitos.png';
 import LogoCSS from '../../assets/images/logo CSS.png';
+import LogoRuby from '../../assets/images/Ruby.png';
 import LogoHTML from '../../assets/images/logo HTML.png';
 import LogoJava from '../../assets/images/logo Java.png';
 import LogoJs from '../../assets/images/logo_js.svg';
@@ -38,10 +39,12 @@ import PainelPevs from '../../assets/images/painel pevs.png';
 import PainelPibMunicipal from '../../assets/images/painel pib municipal.png';
 import PainelPpm from '../../assets/images/painel ppm.png';
 import PainelPms from '../../assets/images/painel pms.png';
-import PainelPim from '../../assets/images/painel pim.png';
-import PainelUsda from '../../assets/images/painel usda.png';
+// import PainelUsda from '../../assets/images/painel usda.png';
+import PainelConsumo from '../../assets/images/painel consumo2.png';
+import PainelCompensa from '../../assets/images/painel compensa2.png';
 import SistemaInteligente from '../../assets/images/Sistema inteligente.png';
-import SiteTrojan from '../../assets/images/site trojan.png';
+// import SiteTrojan from '../../assets/images/site trojan.png';
+import RubyArticos from '../../assets/images/ruby pesquisa termos.jfif';
 // import Camisa3D from "../../components/Models3D/model3d";
 
 
@@ -76,10 +79,10 @@ const itemDev = [
     local:'https://github.com/lucasfreitas25/Projeto-Frontend'
   },
   {
-    img: SiteTrojan,
-    title: 'SITE TROJAN',
-    author: [LogoJs, LogoCSS, LogoHTML],
-    local:"https://github.com/lucasfreitas25/Site-TROJAN"
+    img: RubyArticos,
+    title: 'Sistema de Pesquisa de Artigos',
+    author: [LogoJs, LogoRuby],
+    local:"https://github.com/lucasfreitas25/meu_app_ruby"
   },
   {
     img: ContadorDeTags,
@@ -113,6 +116,7 @@ const itemData = [
     rows: 2,
     cols: 2,
     featured: true,
+    local: 'https://datahub.sedec.mt.gov.br/comercio-e-servicos/mercado-de-trabalho', 
   },
   {
     img: IACalvo,
@@ -124,12 +128,14 @@ const itemData = [
     title: 'PAM',
     author: [LogoPython, LogoPostgres, LogoPowerbi],
     cols: 2,
+    local:'https://datahub.sedec.mt.gov.br/agronegocios/producao-agricola'
   },
   {
     img: PainelPevs,
     title: 'PEVS',
     author: [LogoPython, LogoPostgres, LogoPowerbi],
     cols: 2,
+    local:'https://datahub.sedec.mt.gov.br/agronegocios/floresta-plantada-e-extracao-vegetal'
   },
   {
     img: PainelPpm,
@@ -138,28 +144,31 @@ const itemData = [
     rows: 2,
     cols: 2,
     featured: true,
+    local: 'https://datahub.sedec.mt.gov.br/agronegocios/pecuaria-mt'
   },
   {
     img: PainelConab,
     title: 'CONAB',
     author: [LogoPython, LogoPostgres, LogoPowerbi],
+    local: 'https://datahub.sedec.mt.gov.br/agronegocios/producao-de-graos'
   },
   {
     img: PainelAnp,
     title: 'ANP',
     author: [LogoPython, LogoPostgres, LogoPowerbi],
+    local: 'https://datahub.sedec.mt.gov.br/agronegocios/biocombustiveis'
   },
   {
     img: PainelPibMunicipal,
     title: 'PIB MUNICIPAL',
     author: [LogoPython, LogoPostgres, LogoPowerbi],
+    local: 'https://datahub.sedec.mt.gov.br/perfil-de-mt/pib-dos-municipios'
   },
   {
     img: PainelAbates,
     title: 'ABATE ANIMAIS',
     author: [LogoPython, LogoPostgres, LogoPowerbi],
-    rows: 2,
-    cols: 2,
+    local: 'https://datahub.sedec.mt.gov.br/agronegocios/producao-de-carne'
   },
   {
     img: PainelEstoques,
@@ -167,26 +176,31 @@ const itemData = [
     author: [LogoPython, LogoPostgres, LogoPowerbi],
     rows: 2,
     cols: 2,
+    local:'https://datahub.sedec.mt.gov.br/agronegocios/armazenagem'
   },
   {
-    img: PainelPim,
+    img: PainelCompensa,
     title: 'PIM',
     author: [LogoPython, LogoPostgres, LogoPowerbi],
+    local: 'https://datahub.sedec.mt.gov.br/minas-e-energia/compensacao-financeira-energia'
   },
   {
     img: PainelPms,
     title: 'PMS',
     author: [LogoPython, LogoPostgres, LogoPowerbi],
+    local: 'https://datahub.sedec.mt.gov.br/comercio-e-servicos/pesquisa-mensal-do-servico'
   },
   {
-    img: PainelUsda,
-    title: 'USDA',
+    img: PainelConsumo,
+    title: 'Consumo energia',
     author: [LogoPython, LogoPostgres, LogoPowerbi],
+    local: 'https://datahub.sedec.mt.gov.br/minas-e-energia/consumo-de-energia'
   },
   {
     img: 'src\\assets\\images\\painel ptl.png',
     title: 'PTL',
     author: [LogoPython, LogoPostgres, LogoPowerbi],
+    local: 'https://datahub.sedec.mt.gov.br/agronegocios/pesquisa-trimestral-do-leite'
   },
 ];
 const itemDesign = [
@@ -444,7 +458,7 @@ export default function Projects() {
                         title={<Typography sx={{ fontSize: { xs: '10px', sm: '20px' }, fontWeight: 'bold' }}>{item.title}</Typography>}
                         subtitle={<LogoGallery logos={item.author} />}
                         actionIcon={
-                          <IconButton onClick={useRedirect(item.local)}  sx={{ color: 'rgb(255, 255, 255)' , }} aria-label={`info about ${item.title}`}>
+                          <IconButton onClick={() => useRedirect(item.local)()}  sx={{ color: 'rgb(255, 255, 255)' , }} aria-label={`info about ${item.title}`}>
                             <GitHubIcon sx={{height:{xs:"15px", sm:"30px"}}}></GitHubIcon>
                           </IconButton>
                         }
@@ -459,7 +473,7 @@ export default function Projects() {
 
 
               <TabPanel value={value} index={1}>
-                <ImageList sx={{ width: "100%", height: 450, rowHeight: 180 }}>
+                <ImageList sx={{ width: "100%", height: 450, rowHeight: 180, gap: 8 }}>
                   <ImageListItem key="Subheader" cols={2}>
                     <ListSubheader component="div"></ListSubheader>
                   </ImageListItem>
@@ -479,10 +493,11 @@ export default function Projects() {
                           subtitle={<LogoGallery logos={item.author} />} 
                           actionIcon={
                             <IconButton
+                              onClick={() => useRedirect(item.local)()}
                               sx={{ color: 'rgb(255, 255, 255)' }}
                               aria-label={`info about ${item.title}`}
                             >
-                              <GitHubIcon sx={{height:{xs:"15px", sm:"30px"}}}></GitHubIcon>
+                              <LanguageIcon sx={{height:{xs:"15px", sm:"30px"}}}></LanguageIcon>
                             </IconButton>
                           
                           }
@@ -520,7 +535,7 @@ export default function Projects() {
                               sx={{ color: 'rgb(255, 255, 255)' }}
                               aria-label={`info about ${item.title}`}
                             >
-                              <ThreeDRotationIcon sx={{height:{xs:"15px", sm:"30px"}}}></ThreeDRotationIcon>
+                              <LanguageIcon sx={{height:{xs:"15px", sm:"30px"}}}></LanguageIcon>
                               
                             </IconButton>
                           

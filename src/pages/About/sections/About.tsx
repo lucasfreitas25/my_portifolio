@@ -143,7 +143,6 @@ export default function About() {
                 <StyleTabPanel>
                     <Typography>
                         <StyleText>
-
                             {t("sobre")}
                         </StyleText>
                     </Typography>

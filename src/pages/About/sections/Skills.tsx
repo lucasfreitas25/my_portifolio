@@ -19,6 +19,7 @@ import LogoPython from '../../../assets/images/logo_python.png';
 import LogoReact from '../../../assets/images/logo react.png';
 import LogoSqlite from '../../../assets/images/logo sqllite.png';
 import LogoC from '../../../assets/images/logo_C.png';
+import LogoRuby from '../../../assets/images/Ruby.png';
 // import images from '../../../assets/images/indes';
 // const logo_back = [images.LogoC, images.LogoJava, images.LogoNode, images.LogoPython];
 // const logo_front = [images.LogoCSS, images.LogoHTML, images.LogoJs, images.LogoReact, images.LogoPowerbi];
@@ -28,7 +29,8 @@ const logo_back = [
   LogoC,
   LogoJava,
   LogoNode,
-  LogoPython
+  LogoPython,
+  LogoRuby
 ];
 const logo_front = [
   LogoCSS,
@@ -337,9 +339,9 @@ export default function Skills() {
                     <ListItem sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <Box>
                         <Typography sx={{ fontWeight: 'bold' }}>{t("curso")}:</Typography>
-                        <Typography sx={{ fontWeight: 'bold' }}>Bootcamp Nexa - Machine Learning para Iniciantes na AWS</Typography>
+                        <Typography sx={{ fontWeight: 'bold' }}>Introducing Generative AI with AWS</Typography>
                       </Box>
-                      <StyleButton onClick={useRedirect("https://drive.google.com/file/d/1q88H4SEDNKs3joz39ptoQ4X2LxobYE5C/view?usp=sharing")} width="13%" backgroundColor="green">
+                      <StyleButton onClick={useRedirect("https://drive.google.com/file/d/1tw00-Q5fn4GYwt36AyEjc-0-RsSu_HwW/view?usp=sharing")} width="13%" backgroundColor="green">
                         <WorkspacePremiumIcon />
                         <Typography sx={{display: { xs: 'none', sm: 'block' } }}>{t("certificado")}</Typography>
                       </StyleButton>
@@ -353,6 +355,29 @@ export default function Skills() {
                         <Typography sx={{ fontWeight: 'bold' }}>Python Data Analytics, 2024</Typography>
                       </Box>
                       <StyleButton onClick={useRedirect("https://drive.google.com/file/d/1n1HY0NkSoG9i4N-df5Un3U4d6LeOdrlV/view?usp=sharing")} width="13%" backgroundColor="green">
+                        <WorkspacePremiumIcon />
+                        <Typography sx={{display: { xs: 'none', sm: 'block' } }}>{t("certificado")}</Typography>
+                      </StyleButton>
+                    </ListItem>
+                    <Divider component="li" />
+
+                    <ListItem sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <Box>
+                        <Typography sx={{ fontWeight: 'bold' }}>{t("curso")}:</Typography>
+                        <Typography sx={{ fontWeight: 'bold' }}>Santander 2025 Front end, 2025</Typography>
+                      </Box>
+                      <StyleButton onClick={useRedirect("https://drive.google.com/file/d/1oVNgjluPoPRzbsYxlHc46MpbLuer6emf/view?usp=sharing")} width="13%" backgroundColor="green">
+                        <WorkspacePremiumIcon />
+                        <Typography sx={{display: { xs: 'none', sm: 'block' } }}>{t("certificado")}</Typography>
+                      </StyleButton>
+                    </ListItem>
+                    <Divider component="li" />
+                    <ListItem sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <Box>
+                        <Typography sx={{ fontWeight: 'bold' }}>{t("curso")}:</Typography>
+                        <Typography sx={{ fontWeight: 'bold' }}>LuizaLabs - Back-end com Python, 2025</Typography>
+                      </Box>
+                      <StyleButton onClick={useRedirect("https://drive.google.com/file/d/1VGyr38TsFbcC_vJgo6RDXq7edx4KOD9Q/view?usp=sharing")} width="13%" backgroundColor="green">
                         <WorkspacePremiumIcon />
                         <Typography sx={{display: { xs: 'none', sm: 'block' } }}>{t("certificado")}</Typography>
                       </StyleButton>
@@ -381,7 +406,7 @@ export default function Skills() {
                     <ListItem sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <Box>
                         <Typography sx={{ fontWeight: 'bold' }}>MEI:</Typography>
-                        <Typography sx={{ fontWeight: 'bold' }}>FREITULITOS, 2022-{t("atualmente")}</Typography>
+                        <Typography sx={{ fontWeight: 'bold' }}>Freitulitos, 2022-2025</Typography>
                       </Box>
                       <Button variant="outlined" onClick={handleClickOpen} sx={{backgroundColor:"green", color:"white"}}>
                           SHOW MORE
@@ -425,6 +450,34 @@ export default function Skills() {
                           <DialogContent>
                             <DialogContentText id="alert-dialog-description">
                               {t("showSedec")}
+                            </DialogContentText>
+                          </DialogContent>
+                          <DialogActions>
+                            <Button onClick={handleClose}>{t("fechar")}</Button>
+                          </DialogActions>
+                        </Dialog>
+                    </ListItem>
+                    <Divider component="li" />
+
+                    <ListItem sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <Box>
+                        <Typography sx={{ fontWeight: 'bold' }}>{t("Engenheiro de dados")}:</Typography>
+                        <Typography sx={{ fontWeight: 'bold' }}>Projeto Niesa UFMT, 01/08/2025-01/09/2025</Typography>
+                      </Box>
+                    
+                      <Button variant="outlined" onClick={handleClickOpen} sx={{backgroundColor:"green", color:"white"}}>
+                          SHOW MORE
+                        </Button>
+                        <Dialog
+                          open={open}
+                          onClose={handleClose}
+                          aria-labelledby="alert-dialog-title"
+                          aria-describedby="alert-dialog-description"
+                        >
+
+                          <DialogContent>
+                            <DialogContentText id="alert-dialog-description">
+                              {t("showNiesa")}
                             </DialogContentText>
                           </DialogContent>
                           <DialogActions>
